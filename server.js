@@ -30,6 +30,10 @@ connection.on("error", (err) => {
   console.log("Mongoose connection error: ", err);
 });
 
+const ProductsController = require("./controllers/productsController");
+
+app.use("/api/products", ProductsController);
+
 app.get("/api/config", (req, res) => {
   res.json({
     success: true,
