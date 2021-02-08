@@ -11,6 +11,8 @@ import Contact from "./containers/Contact/Contact";
 import AddNewItem from "./containers/AddNewItem/AddNewItem";
 import ViewAllItems from "./containers/ViewAllItems/ViewAllItems";
 import UserSettings from "./containers/UserSettings/UserSettings";
+import DeliverySearch from "./containers/DeliverySearch/DeliverySearch";
+import StoreAvailability from "./containers/StoreAvailability/StoreAvailability";
 // import NewProduct from "./containers/NewProduct/NewProduct";
 // import ProductDetail from "./containers/ProductDetail/ProductDetail";
 // import Products from "./containers/Products/Products";
@@ -29,7 +31,12 @@ function App() {
           <Route exact path="/addnewitem" component={AddNewItem} />
           <Route exact path="/viewallitems" component={ViewAllItems} />
           <Route exact path="/usersettings" component={UserSettings} />
-
+          <Route exact path="/deliverysearch" component={DeliverySearch} />
+          <Route
+            exact
+            path="/storeavailability"
+            component={StoreAvailability}
+          />
           {/* <Route exact path="/about" component={About} />
           
           <Route exact path="/products" component={Products} />

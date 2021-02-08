@@ -59,6 +59,22 @@ const NavBar = () => {
           </li>
           <li>
             <NavLink
+              to="/deliverysearch"
+              activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
+            >
+              Delivery Search
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/storeavailability"
+              activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
+            >
+              Store Availability
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="/contact"
               activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
             >
