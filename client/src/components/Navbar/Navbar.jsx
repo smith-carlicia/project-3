@@ -6,23 +6,23 @@ const NavBar = () => {
     <nav>
       <div className="nav-wrapper">
         <Link to="/" className="brand-logo">
-          Lucky Larry's Bait Shop
+          Baby Driver
         </Link>
         <ul id="nav-mobile" className="right hide-on-med-and-down">
           <li>
             <NavLink
-              to="/about"
+              to="/"
               activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
             >
-              About
+              Home
             </NavLink>
           </li>
           <li>
             <NavLink
-              to="/contact"
+              to="/login"
               activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
             >
-              Contact
+              Login
             </NavLink>
           </li>
           <li>

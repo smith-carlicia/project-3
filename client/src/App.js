@@ -1,9 +1,12 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import NavBar from "./components/NavBar/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 // import About from "./containers/About/About";
 // import Admin from "./containers/Admin/Admin";
 // import Contact from "./containers/Contact/Contact";
 import Home from "./containers/Home/Home";
+import SignUp from "./containers/SignUp/SignUp";
+import Admin from "./containers/Admin/Admin";
+import Login from "./containers/Login/Login";
 // import NewProduct from "./containers/NewProduct/NewProduct";
 // import ProductDetail from "./containers/ProductDetail/ProductDetail";
 // import Products from "./containers/Products/Products";
@@ -12,9 +15,12 @@ function App() {
   return (
     <div>
       <Router>
-        {/* <NavBar /> */}
+        <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/admin" component={Admin} />
+          <Route exact path="/login" component={Login} />
           {/* <Route exact path="/about" component={About} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/products" component={Products} />
