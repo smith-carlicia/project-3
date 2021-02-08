@@ -35,10 +35,10 @@ const NavBar = () => {
           </li>
           <li>
             <NavLink
-              to="/login"
+              to="/contact"
               activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
             >
-              Login
+              Contact
             </NavLink>
           </li>
         </ul>
