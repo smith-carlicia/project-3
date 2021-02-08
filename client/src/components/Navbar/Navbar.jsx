@@ -35,6 +35,14 @@ const NavBar = () => {
           </li>
           <li>
             <NavLink
+              to="/addnewitem"
+              activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
+            >
+              Add New Item
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="/contact"
               activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
             >

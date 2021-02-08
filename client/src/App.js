@@ -8,6 +8,7 @@ import SignUp from "./containers/SignUp/SignUp";
 import Admin from "./containers/Admin/Admin";
 import Login from "./containers/Login/Login";
 import Contact from "./containers/Contact/Contact";
+import AddNewItem from "./containers/AddNewItem/AddNewItem";
 // import NewProduct from "./containers/NewProduct/NewProduct";
 // import ProductDetail from "./containers/ProductDetail/ProductDetail";
 // import Products from "./containers/Products/Products";
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/admin" component={Admin} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/contact" component={Contact} />
+          <Route exact path="/addnewitem" component={AddNewItem} />
 
           {/* <Route exact path="/about" component={About} />
           
