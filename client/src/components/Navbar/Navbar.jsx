@@ -43,6 +43,22 @@ const NavBar = () => {
           </li>
           <li>
             <NavLink
+              to="/viewallitems"
+              activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
+            >
+              View All Items
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/usersettings"
+              activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
+            >
+              User Settings
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="/contact"
               activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
             >
