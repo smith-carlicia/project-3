@@ -1,25 +1,48 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import NavBar from "./components/NavBar/Navbar";
-// import About from "./containers/About/About";
-// import Admin from "./containers/Admin/Admin";
-// import Contact from "./containers/Contact/Contact";
+import Navbar from "./components/Navbar/Navbar";
 import Home from "./containers/Home/Home";
+import SignUp from "./containers/SignUp/SignUp";
+import Admin from "./containers/Admin/Admin";
+import Login from "./containers/Login/Login";
+import Contact from "./containers/Contact/Contact";
+import AddNewItem from "./containers/AddNewItem/AddNewItem";
+import ViewAllItems from "./containers/ViewAllItems/ViewAllItems";
+import UserSettings from "./containers/UserSettings/UserSettings";
+import DeliverySearch from "./containers/DeliverySearch/DeliverySearch";
+import StoreAvailability from "./containers/StoreAvailability/StoreAvailability";
+import ShoppingCart from "./containers/ShoppingCart/ShoppingCart";
+import Confirmation from "./containers/Confirmation/Confirmation";
 // import NewProduct from "./containers/NewProduct/NewProduct";
 // import ProductDetail from "./containers/ProductDetail/ProductDetail";
 // import Products from "./containers/Products/Products";
+// import About from "./containers/About/About";
 
 function App() {
   return (
     <div>
       <Router>
-        {/* <NavBar /> */}
+        <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
-          {/* <Route exact path="/about" component={About} />
+          <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/admin" component={Admin} />
+          <Route exact path="/login" component={Login} />
           <Route exact path="/contact" component={Contact} />
+          <Route exact path="/addnewitem" component={AddNewItem} />
+          <Route exact path="/viewallitems" component={ViewAllItems} />
+          <Route exact path="/usersettings" component={UserSettings} />
+          <Route exact path="/deliverysearch" component={DeliverySearch} />
+          <Route
+            exact
+            path="/storeavailability"
+            component={StoreAvailability}
+          />
+          <Route exact path="/shoppingcart" component={ShoppingCart} />
+          <Route exact path="/confirmation" component={Confirmation} />
+          {/* <Route exact path="/about" component={About} />
+          
           <Route exact path="/products" component={Products} />
           <Route path="/products/:id" component={ProductDetail} />
-          <Route exact path="/admin" component={Admin} />
           <Route exact path="/admin/new-product" component={NewProduct} /> */}
         </Switch>
       </Router>

@@ -6,23 +6,31 @@ const NavBar = () => {
     <nav>
       <div className="nav-wrapper">
         <Link to="/" className="brand-logo">
-          Lucky Larry's Bait Shop
+          Baby Driver
         </Link>
         <ul id="nav-mobile" className="right hide-on-med-and-down">
           <li>
             <NavLink
-              to="/about"
+              to="/"
               activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
             >
-              About
+              Home
             </NavLink>
           </li>
           <li>
             <NavLink
-              to="/contact"
+              to="/login"
               activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
             >
-              Contact
+              Login
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/signup"
+              activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
+            >
+              Sign Up
             </NavLink>
           </li>
           <li>
@@ -35,10 +43,66 @@ const NavBar = () => {
           </li>
           <li>
             <NavLink
-              to="/login"
+              to="/addnewitem"
               activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
             >
-              Login
+              Add New Item
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/viewallitems"
+              activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
+            >
+              View All Items
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/usersettings"
+              activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
+            >
+              User Settings
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/deliverysearch"
+              activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
+            >
+              Delivery Search
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/storeavailability"
+              activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
+            >
+              Store Availability
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/shoppingcart"
+              activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
+            >
+              Shopping Cart Page
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/confirmation"
+              activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
+            >
+              Confirmation Page
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/contact"
+              activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
+            >
+              Contact
             </NavLink>
           </li>
         </ul>
