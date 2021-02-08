@@ -27,6 +27,14 @@ const NavBar = () => {
           </li>
           <li>
             <NavLink
+              to="/signup"
+              activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
+            >
+              Sign Up
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="/products"
               activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
             >
@@ -71,6 +79,22 @@ const NavBar = () => {
               activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
             >
               Store Availability
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/shoppingcart"
+              activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
+            >
+              Shopping Cart Page
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/confirmation"
+              activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
+            >
+              Confirmation Page
             </NavLink>
           </li>
           <li>

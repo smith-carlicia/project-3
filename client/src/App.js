@@ -1,8 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-// import About from "./containers/About/About";
-// import Admin from "./containers/Admin/Admin";
-// import Contact from "./containers/Contact/Contact";
 import Home from "./containers/Home/Home";
 import SignUp from "./containers/SignUp/SignUp";
 import Admin from "./containers/Admin/Admin";
@@ -13,9 +10,12 @@ import ViewAllItems from "./containers/ViewAllItems/ViewAllItems";
 import UserSettings from "./containers/UserSettings/UserSettings";
 import DeliverySearch from "./containers/DeliverySearch/DeliverySearch";
 import StoreAvailability from "./containers/StoreAvailability/StoreAvailability";
+import ShoppingCart from "./containers/ShoppingCart/ShoppingCart";
+import Confirmation from "./containers/Confirmation/Confirmation";
 // import NewProduct from "./containers/NewProduct/NewProduct";
 // import ProductDetail from "./containers/ProductDetail/ProductDetail";
 // import Products from "./containers/Products/Products";
+// import About from "./containers/About/About";
 
 function App() {
   return (
@@ -37,6 +37,8 @@ function App() {
             path="/storeavailability"
             component={StoreAvailability}
           />
+          <Route exact path="/shoppingcart" component={ShoppingCart} />
+          <Route exact path="/confirmation" component={Confirmation} />
           {/* <Route exact path="/about" component={About} />
           
           <Route exact path="/products" component={Products} />
