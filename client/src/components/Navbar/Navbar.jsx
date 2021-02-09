@@ -19,6 +19,14 @@ const NavBar = () => {
           </li>
           <li>
             <NavLink
+              to="/admin"
+              activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
+            >
+              Admin
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="/login"
               activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
             >
