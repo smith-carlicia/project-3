@@ -1,0 +1,18 @@
+.productManagerHeader {
+    margin-left: 29rem;
+}
+
+.newItemName, .newItemDescription, .newItemPrice, .newItemBrand{
+    margin-left: 8rem;
+}
+
+.newItemSubmit {
+    width: 20%;
+    padding-bottom: 2rem;
+}
+
+.renderedNewItems {
+    height: 600px;
+    margin-left: 10rem;
+    justify-content: left;
+}
