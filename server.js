@@ -10,16 +10,12 @@ app.use(express.json());
 
 app.use(express.static("client/build"));
 
-mongoose.connect(
-  process.env.MONGODB_URI ||
-    "mongodb+srv://badeshiyan:Exeter1!@cluster0.fnzkf.mongodb.net/baby-driver?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-  }
-);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/project-3", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true,
+});
 
 const connection = mongoose.connection;
 
