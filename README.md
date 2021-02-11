@@ -1,4 +1,4 @@
 # project-3
-TODO: MongoDB ATLAS, deploy URI, create enviornment variable
+TODO: ProductsController
 
-TODO: create express routes
+TODO: 
