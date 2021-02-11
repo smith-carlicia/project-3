@@ -43,13 +43,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function SignUp() {
+function AdminAddNew() {
   const classes = useStyles();
   const [loading, setLoading] = useState(false)
 const [product, setProduct] = useState({
   title: "",
   description: "",
-  price: 0
+  price: 0,
+  imageURL: "",
+  category: "",
+  quantity: 0
 })
 const handleChange = e => {
   const {name, type, value} = e.target;
@@ -111,6 +114,45 @@ const handleChange = e => {
                 value={product.price}
               />
             </Grid>
+            <Grid item xs={12}>
+              <TextField onChange={event => handleChange(event)}
+                variant="outlined"
+                required
+                fullWidth
+                name="imageURL"
+                label="imageURL"
+                type="pic"
+                id="imageURL"
+                autoComplete="imageURL"
+                value={product.imageURL}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField onChange={event => handleChange(event)}
+                variant="outlined"
+                required
+                fullWidth
+                name="category"
+                label="category"
+                type="category"
+                id="category"
+                autoComplete="category"
+                value={product.category}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField onChange={event => handleChange(event)}
+                variant="outlined"
+                required
+                fullWidth
+                name="quantity"
+                label="quantity"
+                type="quantity"
+                id="quantity"
+                autoComplete="quantity"
+                value={product.quantity}
+              />
+            </Grid>
           </Grid>
           <Button
             type="submit"
@@ -131,4 +173,4 @@ const handleChange = e => {
 }
 
 
-export default SignUp;
+export default AdminAddNew;
