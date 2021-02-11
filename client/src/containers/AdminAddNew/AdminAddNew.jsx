@@ -46,19 +46,19 @@ const useStyles = makeStyles((theme) => ({
 function AdminAddNew() {
   const classes = useStyles();
   const [loading, setLoading] = useState(false)
-const [product, setProduct] = useState({
-  title: "",
-  description: "",
-  price: 0,
-  imageURL: "",
-  category: "",
-  quantity: 0
-})
-const handleChange = e => {
-  const {name, type, value} = e.target;
-  const val = type === 'number' ? parseFloat(value): value
-  setProduct({...product, [name]: val})
-}
+  const [product, setProduct] = useState({
+    title: "",
+    description: "",
+    price: 0,
+    imageURL: "",
+    category: "",
+    quantity: 0
+  })
+  const handleChange = e => {
+    const { name, type, value } = e.target;
+    const val = type === 'number' ? parseFloat(value) : value
+    setProduct({ ...product, [name]: val })
+  }
   return (
     <Container component="main" maxWidth="md">
       <CssBaseline />

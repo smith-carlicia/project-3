@@ -1,7 +1,5 @@
 import React from 'react';
-import { Avatar, Button, CssBaseline, TextField, Link, Grid, Box, Typography, Container } from '@material-ui/core';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
+import { Avatar, Button, CssBaseline, TextField, Link, Grid, Box, Typography, Container, FormControlLabel, Checkbox } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { makeStyles } from '@material-ui/core/styles';
 
