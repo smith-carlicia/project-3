@@ -3,16 +3,16 @@ const express = require("express");
 const Product = require("../models/product");
 
 module.exports = {
-  findAllProducts:  (req, res) => {
-      Product.find()
-        .then((products) => {
-          res.json(products);
-        })
-        .catch((err) => {
-          console.log(err);
-          res.status(500).end();
-        });
-      },
+  findAllProducts: (req, res) => {
+    Product.find()
+      .then((products) => {
+        res.json(products);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).end();
+      });
+  },
   createProduct: async (req, res) => {
     try {
       const product = new Product(req.body);
@@ -21,10 +21,8 @@ module.exports = {
     } catch (error) {
       res.status(500).send(error);
     }
-  }
-}
-
-
+  },
+};
 
 // router.get("/", (req, res) => {
 //   Product.find()

@@ -1,17 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import ListItemText from '@material-ui/core/ListItemText';
-import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import FolderIcon from '@material-ui/icons/Folder';
-import Add from '@material-ui/icons/Add';
-import Remove from '@material-ui/icons/Remove';
+import { Avatar, List, ListItem, ListItemAvatar, ListItemSecondaryAction, Grid, ListItemText, Typography, IconButton } from '@material-ui/core';
+import { Add, Remove } from '@material-ui/icons';
 import productAPI from '../../utils/API_product';
 
 const useStyles = makeStyles((theme) => ({
@@ -61,7 +51,7 @@ export default function UserHome() {
                     <div className={classes.demo}>
                         <List dense={dense}>{products.map(product => <ListItem>
                             <ListItemAvatar>
-                                <Avatar alt='Product Image' src={product.imageURL}/>
+                                <Avatar alt='Product Image' src={product.imageURL} />
                             </ListItemAvatar>
                             <ListItemText
                                 key={product._id}
@@ -69,7 +59,7 @@ export default function UserHome() {
                                 secondary={product.description}
                             />
                             <ListItemSecondaryAction>
-                            <IconButton edge="end" aria-label="delete">
+                                <IconButton edge="end" aria-label="delete">
                                     <Remove />
                                 </IconButton>
                                 <IconButton edge="end" aria-label="delete">
