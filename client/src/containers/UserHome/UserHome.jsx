@@ -43,9 +43,9 @@ export default function UserHome() {
 
     return (
         <div className={classes.root}>
-            <Grid container spacing={2}>
-                <Grid item xs={12} md={6}>
-                    <Typography variant="h6" className={classes.title}>
+            <Grid container spacing={12}>
+                <Grid item xs={12} md={12} lg={12}>
+                    <Typography variant="h6" className={classes.title} style={{textAlign: "center"}}>
                         User Page
           </Typography>
                     <div className={classes.demo}>
