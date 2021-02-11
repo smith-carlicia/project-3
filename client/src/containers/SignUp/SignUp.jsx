@@ -1,4 +1,5 @@
 import React from "react";
+import { Link as Follow} from "react-router-dom";
 import './SignUp.css';
 import { Avatar, Button, CssBaseline, TextField, Link, Grid, Box, Typography, Container, FormControlLabel, Checkbox } from '@material-ui/core';
 import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
@@ -105,14 +106,8 @@ function SignUp() {
                 autoComplete="current-password"
               />
             </Grid>
-            <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
-              />
-            </Grid>
           </Grid>
-          <Button
+          <Follow to='/userhome'><Button
             type="submit"
             fullWidth
             variant="contained"
@@ -121,9 +116,10 @@ function SignUp() {
           >
             Sign Up
           </Button>
-          <Grid container justify="flex-end">
+          </Follow>
+          <Grid container>
             <Grid item>
-              <Link className="accountLink" href="#" variant="body2">
+              <Link to='/userhome' className="accountLink" variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>

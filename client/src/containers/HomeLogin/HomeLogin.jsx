@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link as Follow} from "react-router-dom";
 import { Avatar, Button, CssBaseline, TextField, Link, Grid, Box, Typography, Container, FormControlLabel, Checkbox } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { makeStyles } from '@material-ui/core/styles';
@@ -76,7 +77,7 @@ export default function HomeLogin() {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <Button
+          <Follow to='/userhome'><Button
             type="submit"
             fullWidth
             variant="contained"
@@ -85,6 +86,7 @@ export default function HomeLogin() {
           >
             Sign In
           </Button>
+          </Follow>
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
@@ -92,9 +94,9 @@ export default function HomeLogin() {
               </Link>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Follow to='/signup' variant="body2">
                 {"Don't have an account? Sign Up"}
-              </Link>
+              </Follow>
             </Grid>
           </Grid>
         </form>
