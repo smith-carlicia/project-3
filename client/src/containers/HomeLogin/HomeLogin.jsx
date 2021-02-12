@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link as Follow} from "react-router-dom";
 import { Avatar, Button, CssBaseline, TextField, Link, Grid, Box, Typography, Container, FormControlLabel, Checkbox } from '@material-ui/core';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
 import { makeStyles } from '@material-ui/core/styles';
 
 function Copyright() {
@@ -45,7 +45,7 @@ export default function HomeLogin() {
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
+          <ChildFriendlyIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
           Sign in

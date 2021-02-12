@@ -67,7 +67,7 @@ function AdminAddNew() {
           <ChildFriendlyIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign up
+          Add New Item
         </Typography>
         <form className={classes.form} noValidate onSubmit={async e => {
           e.preventDefault()
