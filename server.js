@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 const app = express();
+const routes = require('./routes');
 
 const PORT = process.env.PORT || 3001;
 
@@ -10,16 +11,12 @@ app.use(express.json());
 
 app.use(express.static("client/build"));
 
-mongoose.connect(
-  process.env.MONGODB_URI ||
-    "mongodb+srv://badeshiyan:Exeter1!@cluster0.fnzkf.mongodb.net/baby-driver?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-  }
-);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/project-3", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true,
+});
 
 const connection = mongoose.connection;
 
@@ -31,19 +28,21 @@ connection.on("error", (err) => {
   console.log("Mongoose connection error: ", err);
 });
 
-const ProductsController = require("./controllers/productsController");
+app.use(routes);
 
-app.use("/api/products", ProductsController);
+// const ProductsController = require("./controllers/productsController");
 
-app.get("/api/config", (req, res) => {
-  res.json({
-    success: true,
-  });
-});
+// app.use("/api/products", ProductsController);
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(_dirname, "client/build/index.html"));
-});
+// app.get("/api/config", (req, res) => {
+//   res.json({
+//     success: true,
+//   });
+// });
+
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(_dirname, "client/build/index.html"));
+// });
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
