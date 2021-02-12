@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from '@material-ui/core/styles';
-import { Avatar, List, ListItem, ListItemAvatar, ListItemSecondaryAction, Grid, ListItemText, Typography, IconButton } from '@material-ui/core';
+import { Avatar, List, ListItem, ListItemAvatar, ListItemSecondaryAction, Grid, ListItemText, Typography, IconButton, Container } from '@material-ui/core';
 import { Add, Remove } from '@material-ui/icons';
 import productAPI from '../../utils/API_product';
 
@@ -43,35 +43,37 @@ export default function UserHome() {
 
     return (
         <div className={classes.root}>
-            <Grid container spacing={12}>
-                <Grid item xs={12} md={12} lg={12}>
-                    <Typography variant="h6" className={classes.title} style={{textAlign: "center"}}>
-                        User Page
+            <Container fluid maxWidth="lg">
+                <Grid container>
+                    <Grid item xs={6} md={12} lg={12}>
+                        <Typography variant="h6" className={classes.title} style={{ textAlign: "center" }}>
+                            User Page
           </Typography>
-                    <div className={classes.demo}>
-                        <List dense={dense}>{products.map(product => <ListItem>
-                            <ListItemAvatar>
-                                <Avatar alt='Product Image' src={product.imageURL} />
-                            </ListItemAvatar>
-                            <ListItemText
-                                key={product._id}
-                                primary={product.title}
-                                secondary={product.description}
-                            />
-                            <ListItemSecondaryAction>
-                                <IconButton edge="end" aria-label="delete">
-                                    <Remove />
-                                </IconButton>
-                                <IconButton edge="end" aria-label="delete">
-                                    <Add />
-                                </IconButton>
-                            </ListItemSecondaryAction>
-                        </ListItem>)}
+                        <div className={classes.demo}>
+                            <List dense={dense}>{products.map(product => <ListItem>
+                                <ListItemAvatar>
+                                    <Avatar alt='Product Image' src={product.imageURL} />
+                                </ListItemAvatar>
+                                <ListItemText
+                                    key={product._id}
+                                    primary={product.title}
+                                    secondary={product.description}
+                                />
+                                <ListItemSecondaryAction>
+                                    <IconButton edge="end" aria-label="delete">
+                                        <Remove />
+                                    </IconButton>
+                                    <IconButton edge="end" aria-label="delete">
+                                        <Add />
+                                    </IconButton>
+                                </ListItemSecondaryAction>
+                            </ListItem>)}
 
-                        </List>
-                    </div>
+                            </List>
+                        </div>
+                    </Grid>
                 </Grid>
-            </Grid>
+            </Container>
         </div>
     );
 }
