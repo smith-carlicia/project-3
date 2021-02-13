@@ -96,6 +96,7 @@ export default function UserHome() {
       });
   }, []);
 
+  // TODO: fix increase and decrease & only change one item's state 
   const increaseAmountChange = () => {
     if (this === "start") {
       setAmount(amount - 1);
