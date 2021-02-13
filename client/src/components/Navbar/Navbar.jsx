@@ -1,9 +1,18 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AppBar } from "@material-ui/core";
+import Toolbar from "@material-ui/core/Toolbar";
+import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
+import InputBase from "@material-ui/core/InputBase";
+import MenuIcon from "@material-ui/icons/Menu";
+import SearchIcon from "@material-ui/icons/Search";
+import AccountCircle from "@material-ui/icons/AccountCircle";
+import { fade, makeStyles } from "@material-ui/core/styles";
 
 const NavBar = () => {
   return (
-    <nav>
+    <AppBar>
       <div className="nav-wrapper">
         <Link to="/" className="brand-logo">
           Baby Driver
@@ -75,7 +84,7 @@ const NavBar = () => {
           </li>
         </ul>
       </div>
-    </nav>
+    </AppBar>
   );
 };
 
