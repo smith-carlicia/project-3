@@ -6,8 +6,8 @@ import HomeLogin from "./containers/HomeLogin/HomeLogin";
 import UserAbout from "./containers/UserAbout/UserAbout";
 import UserContact from "./containers/UserContact/UserContact";
 import UserHome from "./containers/UserHome/UserHome";
-import UserShoppingCart from "./containers/UserShoppingCart/UserShoppingCart";
 import SignUp from "./containers/SignUp/SignUp";
+import UserShoppingCart from "./containers/UserShoppingCart/UserShoppingCart";
 
 // import NewProduct from "./containers/NewProduct/NewProduct";
 // import ProductDetail from "./containers/ProductDetail/ProductDetail";
@@ -28,6 +28,7 @@ function App() {
           <Route exact path="/userhome" component={UserHome} />
           <Route exact path="/usershoppingcart" component={UserShoppingCart} />
           <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/usershoppingcart" component={UserShoppingCart} />
         </Switch>
       </Router>
     </div>

@@ -65,6 +65,14 @@ const NavBar = () => {
               Admin New Item
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/usershoppingcart"
+              activeStyle={{ backgroundColor: "rgba(0,0,0,0.1)" }}
+            >
+              User Shopping Cart
+            </NavLink>
+          </li>
         </ul>
       </div>
     </nav>
