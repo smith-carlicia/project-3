@@ -1,6 +1,5 @@
 import React from "react";
 import { Link as Follow } from "react-router-dom";
-import "./UserAbout.css";
 import {
   Avatar,
   Button,
@@ -20,15 +19,16 @@ import { makeStyles } from "@material-ui/core/styles";
 const UserAbout = () => {
   return (
     <body>
-      <div class="container">
-        Baby Driver is a unique app that gives its users (typically mothers with
-        young children), the ability to order baby-specific supplies, having
-        their favorite/past order items ready to purchase. 
-        
-        Created in February 2021by recent Georgia Tech Full Stack Development Bootcamp graduates Bambo
-        Adeshiyan, Dempsey Finley-Price an Carlicia Smith, the app app also
-        eliminates the need to go out into the public, possibly exposing a
-        mother and her newborn to the COVID-19 virus. 
+      <div className="row">
+        <div className="col s12">Baby Driver is a unique app that gives its users (typically mothers with
+        young children), the ability to order baby-specific supplies from the
+        comfort of their own home, or closest tech device. Created in February
+        2021 by recent Georgia Tech Full Stack Development Bootcamp graduates
+        Bambo Adeshiyan, Dempsey Finley-Price and Carlicia Smith, the app's functionality allows
+        its users to simply filter products with a search input, add products to their
+        cart, edit shopping cart choices, and reorder previously purchased items. The
+        app also eliminates the need for users to go out into public spaces,
+        possibly exposing a mother and her newborn to the COVID-19 virus.</div>
       </div>
     </body>
   );
