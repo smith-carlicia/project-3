@@ -1,5 +1,5 @@
 import React from "react";
-import { Link as Follow} from "react-router-dom";
+import { Link as Follow } from "react-router-dom";
 import './SignUp.css';
 import { Avatar, Button, CssBaseline, TextField, Link, Grid, Box, Typography, Container, FormControlLabel, Checkbox } from '@material-ui/core';
 import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
