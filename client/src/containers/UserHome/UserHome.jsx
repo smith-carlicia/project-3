@@ -97,12 +97,9 @@ export default function UserHome() {
   }, []);
 
   // TODO: fix increase and decrease & only change one item's state 
-  const increaseAmountChange = () => {
-    if (this === "start") {
-      setAmount(amount - 1);
-    } else {
-      setAmount(amount + 1);
-    }
+  const increaseAmountChange = (e) => {
+    console.log(e);
+    setAmount(amount + 1);
   };
 
   return (
@@ -138,7 +135,7 @@ export default function UserHome() {
                     secondary={product.description}
                   />
                   <ListItemSecondaryAction>
-                    <div onClick={() => increaseAmountChange()}>
+                    <div onClick={() => increaseAmountChange(product)}>
                       <IconButton edge="start" aria-label="delete">
                         <Remove />
                       </IconButton>
