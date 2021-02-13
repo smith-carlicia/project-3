@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 752,
   },
   demo: {
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: theme.palette.background.red,
   },
   title: {
     margin: theme.spacing(4, 0, 2),
@@ -56,6 +56,19 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
+  inputAmount: {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    padding: `calc(1em + ${theme.spacing(1)}px)`,
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      width: '1ch',
+      '&:focus': {
+        width: '20ch',
+      },
+    },
+  },
 }));
 
 // function generate(element) {
@@ -67,6 +80,7 @@ const useStyles = makeStyles((theme) => ({
 // }
 
 export default function UserHome() {
+  const [amount, setAmount] = useState(1);
   const [products, setProducts] = useState([]);
   const classes = useStyles();
   const [dense, setDense] = React.useState(false);
@@ -81,6 +95,12 @@ export default function UserHome() {
         console.log(error);
       });
   }, []);
+
+  // TODO: fix increase and decrease & only change one item's state 
+  const increaseAmountChange = (e) => {
+    console.log(e);
+    setAmount(amount + 1);
+  };
 
   return (
     <>
@@ -115,15 +135,23 @@ export default function UserHome() {
                     secondary={product.description}
                   />
                   <ListItemSecondaryAction>
-                    <IconButton edge="end" aria-label="delete">
-                      <Remove />
-                    </IconButton>
-                    <IconButton edge="end" aria-label="delete">
-                      <Add />
-                    </IconButton>
+                    <div onClick={() => increaseAmountChange(product)}>
+                      <IconButton edge="start" aria-label="delete">
+                        <Remove />
+                      </IconButton>
+                      <InputBase
+                        placeholder={amount}
+                        classes={{
+                          root: classes.inputRoot,
+                          input: classes.inputAmount,
+                        }}
+                      />
+                      <IconButton edge="end" aria-label="add">
+                        <Add />
+                      </IconButton>
+                    </div>
                   </ListItemSecondaryAction>
                 </ListItem>)}
-
                 </List>
               </div>
             </Grid>

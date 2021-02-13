@@ -1,34 +1,31 @@
 footer {
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color:white;
-    border-top:solid;
-    border-color: rosybrown;
-    border-width: 2px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  border-top: solid;
+  border-color: rosybrown;
+  border-width: 2px;
 }
-
 .link {
-    color: black;
-    font-style: none;
+  color: black;
+  font-style: none;
 }
-
 .copyright {
-    margin-top: 5rem;
-    padding-top: 2rem;
-    padding-left: 215px;
+  margin-top: 5rem;
+  padding-top: 2rem;
+  padding-left: 215px;
 }
-
 .footerItems {
-    padding-left: 5rem;
+  padding-left: 5rem;
 }
-
-.know, .contact, .business {
-    color: black;
-    margin-top: 700px;
-    margin-right: 400px;
+.know,
+.contact,
+.business {
+  color: black;
+  margin-top: 700px;
+  margin-right: 400px;
 }
 /* .footer {
     justify-content: center;
 } */
-
