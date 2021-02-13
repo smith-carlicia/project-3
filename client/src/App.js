@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import AppBar from "./components/AppBar/AppBar";
 import AdminAddNew from "./containers/AdminAddNew/AdminAddNew";
