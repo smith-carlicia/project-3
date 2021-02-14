@@ -1,163 +1,121 @@
+//   return (
+//     <>
+//       <SearchAppBar />
+//       <div className={classes.root}>
+//         <Container fluid maxWidth="lg">
+//           <Grid container>
+//             <Grid item xs={6} md={12} lg={12}>
+//               <Typography variant="h6" className={classes.title} style={{ textAlign: "center" }}>
+//                 User Page
+//           </Typography>
+//               <div className={classes.demo}>
+//                 <List>{products.map(product => <ListItem>
+//                   <ListItemAvatar>
+//                     <Avatar alt='Product Image' src={product.imageURL} />
+//                   </ListItemAvatar>
+//                   <ListItemText
+//                     key={product._id}
+//                     primary={product.title}
+//                     secondary={product.description}
+//                   />
+//                   <ListItemSecondaryAction>
+//                     <div onClick={() => incrementAmountChange(product._id)}>
+//                       <IconButton edge="start" aria-label="delete">
+//                         <Remove />
+//                       </IconButton>
+//                       <IconButton edge="end" aria-label="add">
+//                         <Add />
+//                       </IconButton>
+//                     </div>
+//                   </ListItemSecondaryAction>
+//                 </ListItem>)}
+//                 </List>
+//               </div>
+//             </Grid>
+//           </Grid>
+//         </Container>
+//       </div>
+//     </>
+//   );
+// }
+
+
 import React, { useEffect, useState } from "react";
-import { fade, makeStyles } from '@material-ui/core/styles';
-import { Avatar, List, ListItem, InputBase, ListItemAvatar, ListItemSecondaryAction, Grid, ListItemText, Typography, IconButton, Container } from '@material-ui/core';
+import { Avatar, IconButton, makeStyles, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
 import { Add, Remove } from '@material-ui/icons';
-import SearchIcon from '@material-ui/icons/Search';
+import SearchAppBar from "../../components/SearchAppBar/SearchAppBar";
 import productAPI from '../../utils/API_product';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-
-    flexGrow: 1,
-    maxWidth: 752,
-  },
-  demo: {
-    backgroundColor: theme.palette.background.red,
+    '& > *': {
+      margin: theme.spacing(1),
+    },
+    table: {
+      minWidth: 400,
+    },
   },
   title: {
     margin: theme.spacing(4, 0, 2),
   },
-  search: {
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(1),
-      width: 'auto',
-    },
-  },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  inputRoot: {
-    color: 'inherit',
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: '12ch',
-      '&:focus': {
-        width: '20ch',
-      },
-    },
-  },
-  inputAmount: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    padding: `calc(1em + ${theme.spacing(1)}px)`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: '1ch',
-      '&:focus': {
-        width: '20ch',
-      },
-    },
-  },
 }));
 
-// function generate(element) {
-//   return [0, 1, 2].map((value) =>
-//     React.cloneElement(element, {
-//       key: value,
-//     }),
-//   );
-// }
-
 export default function UserHome() {
-  const [amount, setAmount] = useState(1);
-  const [products, setProducts] = useState([]);
   const classes = useStyles();
-  const [dense, setDense] = React.useState(false);
-  const [secondary, setSecondary] = React.useState(false);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     productAPI.findAllProducts().then((response) => {
       setProducts(response.data);
-      console.log(response.data);
     })
       .catch((error) => {
         console.log(error);
       });
   }, []);
 
-  // TODO: fix increase and decrease & only change one item's state 
-  const increaseAmountChange = (e) => {
-    console.log(e);
-    setAmount(amount + 1);
-  };
-
   return (
     <>
-      <div className={classes.search}>
-        <div className={classes.searchIcon}>
-          <SearchIcon />
-        </div>
-        <InputBase
-          placeholder="Search…"
-          classes={{
-            root: classes.inputRoot,
-            input: classes.inputInput,
-          }}
-          inputProps={{ 'aria-label': 'search' }}
-        />
-      </div>
-      <div className={classes.root}>
-        <Container fluid maxWidth="lg">
-          <Grid container>
-            <Grid item xs={6} md={12} lg={12}>
-              <Typography variant="h6" className={classes.title} style={{ textAlign: "center" }}>
-                User Page
-          </Typography>
-              <div className={classes.demo}>
-                <List dense={dense}>{products.map(product => <ListItem>
-                  <ListItemAvatar>
+      <SearchAppBar />
+      <TableContainer component={Paper} fluid style={{ marginTop: "100px", width: "100%" }}>
+        <div className={classes.root}>
+          <Table className={classes.table} aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell>IMG</TableCell>
+                <TableCell align="left">Product</TableCell>
+                <TableCell align="left">Description</TableCell>
+                <TableCell align="center">Price</TableCell>
+                <TableCell align="right">Quantity</TableCell>
+                <TableCell align="right"></TableCell>
+                <TableCell align="right"></TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {products.map((product) => (
+                <TableRow key={product.id}>
+                  <TableCell align="left">
                     <Avatar alt='Product Image' src={product.imageURL} />
-                  </ListItemAvatar>
-                  <ListItemText
-                    key={product._id}
-                    primary={product.title}
-                    secondary={product.description}
-                  />
-                  <ListItemSecondaryAction>
-                    <div onClick={() => increaseAmountChange(product)}>
-                      <IconButton edge="start" aria-label="delete">
-                        <Remove />
-                      </IconButton>
-                      <InputBase
-                        placeholder={amount}
-                        classes={{
-                          root: classes.inputRoot,
-                          input: classes.inputAmount,
-                        }}
-                      />
-                      <IconButton edge="end" aria-label="add">
-                        <Add />
-                      </IconButton>
-                    </div>
-                  </ListItemSecondaryAction>
-                </ListItem>)}
-                </List>
-              </div>
-            </Grid>
-          </Grid>
-        </Container>
-      </div>
+                  </TableCell>
+                  <TableCell component="th" scope="row">
+                    {product.title}
+                  </TableCell>
+                  <TableCell align="left">{product.description}</TableCell>
+                  <TableCell align="center">${product.price}</TableCell>
+                  <TableCell align="right">{product.quantity}</TableCell>
+                  <TableCell align="right" >
+                    <IconButton className="counter-buttons" edge="end" aria-label="subtract">
+                      <Remove />
+                    </IconButton></TableCell>
+                  <TableCell align="right">
+                    <IconButton className="counter-buttons" edge="end" aria-label="add">
+                      <Add />
+                    </IconButton></TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
+      </TableContainer>
     </>
   );
 }

@@ -1,21 +1,9 @@
 import React, { useState } from "react";
-import { Avatar, Button, CssBaseline, TextField, Link, Grid, Box, Typography, Container } from '@material-ui/core';
+import { Link as Follow } from "react-router-dom";
+import { Avatar, Button, CssBaseline, TextField, Grid, Typography, Container } from '@material-ui/core';
 import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
 import { makeStyles } from '@material-ui/core/styles';
 import productAPI from '../../utils/API_product';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Baby Driver
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -25,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
       theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    marginTop: theme.spacing(8),
+    marginTop: "15ch",
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -154,23 +142,21 @@ function AdminAddNew() {
               />
             </Grid>
           </Grid>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
-            Add Item
+          <Follow to="/admin">
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+            >
+              Add Item
           </Button>
+          </Follow>
         </form>
       </div>
-      <Box mt={5}>
-        <Copyright />
-      </Box>
     </Container>
   );
 }
-
 
 export default AdminAddNew;
