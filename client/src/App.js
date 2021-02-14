@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
-import AppBar from "./components/AppBar/AppBar";
 import AdminAddNew from "./containers/AdminAddNew/AdminAddNew";
 import AdminHome from "./containers/AdminHome/AdminHome";
 import HomeLogin from "./containers/HomeLogin/HomeLogin";
@@ -18,8 +17,6 @@ function App() {
   return (
     <div>
       <Router>
-        {/* <Navbar /> */}
-        <AppBar />
         <Switch>
           <Route exact path="/" component={HomeLogin} />
           <Route exact path="/admin" component={AdminHome} />
@@ -28,7 +25,6 @@ function App() {
           <Route exact path="/userhome" component={UserHome} />
           <Route exact path="/usershoppingcart" component={UserShoppingCart} />
           <Route exact path="/signup" component={SignUp} />
-          <Route exact path="/usershoppingcart" component={UserShoppingCart} />
         </Switch>
         <Footer />
       </Router>

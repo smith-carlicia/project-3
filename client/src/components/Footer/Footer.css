@@ -1,30 +1,17 @@
 footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
   background-color: rgb(189, 122, 122);
   border-top: solid;
-  border-color: rgb(189, 122, 122);
-  border-width: 2px;
-  padding-bottom: 10px;
+  bottom: 0;
+  max-height: 20px;
+  padding-bottom: 30px;
   padding-top: 10px;
-  max-height: 30px;
+  position: fixed;
+  width: 100%;
 }
-.link {
-  color: black;
-  font-style: none;
+
+.appBarItems {
+  color: rgb(230, 216, 216);
+  font: serif;
+  font-size: 12px;
+  font-style: inherit;
 }
-.footerItems {
-  padding-left: 5rem;
-}
-.know,
-.contact,
-.business {
-  padding: 10px;
-  margin: auto;
-  color: black;
-}
-/* .footer {
-    justify-content: center;
-} */
