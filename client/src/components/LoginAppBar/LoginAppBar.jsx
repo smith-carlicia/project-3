@@ -20,7 +20,7 @@ export default function LoginAppBar() {
   const classes = useStyles();
 
   return (
-    <div className="nav-stlye">
+    <div className="nav-style">
       <AppBar position="fixed" >
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
