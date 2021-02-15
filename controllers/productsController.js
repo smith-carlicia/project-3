@@ -22,6 +22,16 @@ module.exports = {
       res.status(500).send(error);
     }
   },
+  deleteProduct: async (req, res) => {
+    try {
+      Product.findByIdAndDelete(req.params.id).then((result) => {
+        // res.json(result);
+        console.log(result);
+      });
+    } catch (error) {
+      res.status(500).send(error);
+    }
+  },
 };
 
 // router.get("/", (req, res) => {
