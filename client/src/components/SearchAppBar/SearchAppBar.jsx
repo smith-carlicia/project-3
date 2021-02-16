@@ -1,8 +1,15 @@
 import "./SearchAppBar.css";
 import React from "react";
-import { AppBar, fade, InputBase, makeStyles, Toolbar, Typography } from "@material-ui/core";
+import {
+  AppBar,
+  fade,
+  InputBase,
+  makeStyles,
+  Toolbar,
+  Typography,
+} from "@material-ui/core";
 import HomeTwoToneIcon from "@material-ui/icons/HomeTwoTone";
-import MeetingRoomTwoToneIcon from '@material-ui/icons/MeetingRoomTwoTone';
+import MeetingRoomTwoToneIcon from "@material-ui/icons/MeetingRoomTwoTone";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartTwoToneIcon from "@material-ui/icons/ShoppingCartTwoTone";
 import { Link, NavLink } from "react-router-dom";
@@ -68,7 +75,7 @@ export default function SearchAppBar() {
   return (
     <div className={classes.root}>
       <AppBar position="fixed">
-        <Toolbar className="nav-stlye">
+        <Toolbar className="nav-style">
           <Typography className={classes.title} variant="h6" noWrap>
             <Link to="/about" className="nav-style">
               Baby Driver
@@ -87,23 +94,18 @@ export default function SearchAppBar() {
               inputProps={{ "aria-label": "search" }}
             />
           </div>
-          <div id="nav-mobile" className="right" style={{ direction: "inherit" }}>
-            <NavLink
-              to="/"
-              className="nav-style"
-            >
+          <div
+            id="nav-mobile"
+            className="right"
+            style={{ direction: "inherit" }}
+          >
+            <NavLink to="/" className="nav-style">
               <MeetingRoomTwoToneIcon />
             </NavLink>
-            <NavLink
-              to="/userhome"
-              className="nav-style"
-            >
+            <NavLink to="/userhome" className="nav-style">
               <HomeTwoToneIcon />
             </NavLink>
-            <NavLink
-              to="/usershoppingcart"
-              className="nav-style"
-            >
+            <NavLink to="/usershoppingcart" className="nav-style">
               <ShoppingCartTwoToneIcon />
             </NavLink>
           </div>

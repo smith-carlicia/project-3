@@ -64,9 +64,10 @@ function AdminAddNew() {
           productAPI.createProduct(product).then((response) => {
             console.log(response.data);
             history.push("/admin");
-          }).catch((error => {
-            console.log(error);
-          }))
+          })
+            .catch((err) => {
+              console.log(err);
+            });
           setLoading(false)
           console.log("added Item...")
         }}>
@@ -148,17 +149,15 @@ function AdminAddNew() {
               />
             </Grid>
           </Grid>
-          {/* <Follow to="/admin"> */}
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
-              Add Item
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+          >
+            Add Item
           </Button>
-          {/* </Follow> */}
         </form>
       </div>
     </Container>
