@@ -23,7 +23,6 @@ module.exports = {
     }
   },
 };
-
 // router.get("/", (req, res) => {
 //   Product.find()
 //     .then((products) => {
