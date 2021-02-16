@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     palette: {
         primary: "#3f50b5",
         secondary: "#e53935",
-      },
+    },
     root: {
         '& > *': {
             margin: theme.spacing(1),
@@ -45,7 +45,7 @@ export default function AdminHome() {
             <TableContainer component={Paper} fluid style={{ marginTop: "100px", width: "100%" }}>
                 <div className={classes.root}>
                     <Link to="/addnewitem">
-                        <Fab variant="extended" color={classes.palette} color="primary" aria-label="add">
+                        <Fab variant="extended" className={classes.palette} color="primary" aria-label="add">
                             <AddIcon />Add Item
                         </Fab>
                     </Link>

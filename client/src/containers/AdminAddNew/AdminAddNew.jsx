@@ -46,6 +46,7 @@ function AdminAddNew() {
   })
   const handleChange = e => {
     const { name, type, value } = e.target;
+    console.log(type);
     const val = type === 'number' ? parseFloat(value) : value
     setProduct({ ...product, [name]: val })
   }

@@ -42,8 +42,8 @@ export default function UserHome() {
       <SearchAppBar />
       <TableContainer component={Paper} fluid style={{ marginTop: "100px", width: "100%" }}>
         <div className={classes.root}>
-          <Link to="/addnewitem">
-            <Fab variant="extended" color={classes.palette} color="secondary" aria-label="add">
+          <Link to="/usershoppingcart">
+            <Fab variant="extended" color={classes.palette} aria-label="add">
               <AddIcon />Shopping Cart
                         </Fab>
           </Link>
