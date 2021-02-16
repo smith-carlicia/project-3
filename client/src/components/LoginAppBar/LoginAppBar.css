@@ -1,6 +1,13 @@
 .nav-style {
   background-color: rgb(189, 122, 122);
   color: rgb(230, 216, 216);
-  max-height: 25px;
-  padding: 10px;
+  max-height: 100px;
+  width: 100%;
+  font-size: xx-large;
+}
+.home-link {
+  background-color: rgb(189, 122, 122);
+  color: rgb(230, 216, 216);
+  max-height: 100px;
+  float: right;
 }

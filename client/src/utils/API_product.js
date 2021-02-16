@@ -8,7 +8,7 @@ const productAPI = {
   },
   deleteProduct: function (id) {
     return axios.delete("/api/product/" + id)
-  }
+  },
 };
 
 export default productAPI;
