@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link as Follow } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Avatar, Button, CssBaseline, TextField, Grid, Typography, Container } from '@material-ui/core';
 import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
 import { makeStyles } from '@material-ui/core/styles';
@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
 
 function AdminAddNew() {
   const classes = useStyles();
+  const history = useHistory();
   const [loading, setLoading] = useState(false)
   const [product, setProduct] = useState({
     title: "",
@@ -60,7 +61,13 @@ function AdminAddNew() {
         <form className={classes.form} noValidate onSubmit={async e => {
           e.preventDefault()
           setLoading(true);
-          productAPI.createProduct(product);
+          productAPI.createProduct(product).then((response) => {
+            console.log(response.data);
+            history.push("/admin");
+          })
+            .catch((err) => {
+              console.log(err);
+            });
           setLoading(false)
           console.log("added Item...")
         }}>
@@ -142,17 +149,15 @@ function AdminAddNew() {
               />
             </Grid>
           </Grid>
-          <Follow to="/admin">
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
-              Add Item
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+          >
+            Add Item
           </Button>
-          </Follow>
         </form>
       </div>
     </Container>
