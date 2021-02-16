@@ -20,17 +20,17 @@ function Copyright() {
 const Footer = () => {
   return (
       <footer>
-        <Grid container className="footerItems" direction="row" spacing={10} justify="center" >
+        <Grid container direction="row" spacing={10} justify="center" >
           <Grid item direction="column">
-            <NavLink className="appBarItems" to="/about">
+            <NavLink className="footerItems" to="/about">
               About & Contact
                             </NavLink>
           </Grid>
-          <Grid item className="appBarItems" direction="column">
+          <Grid item className="footerItems" direction="column">
             <Copyright />
           </Grid>
           <Grid item direction="column">
-            <NavLink className="appBarItems" to="/admin">
+            <NavLink className="footerItems" to="/admin">
               Admin
                             </NavLink>
           </Grid>

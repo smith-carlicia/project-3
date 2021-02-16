@@ -1,52 +1,16 @@
-//   return (
-//     <>
-//       <SearchAppBar />
-//       <div className={classes.root}>
-//         <Container fluid maxWidth="lg">
-//           <Grid container>
-//             <Grid item xs={6} md={12} lg={12}>
-//               <Typography variant="h6" className={classes.title} style={{ textAlign: "center" }}>
-//                 User Page
-//           </Typography>
-//               <div className={classes.demo}>
-//                 <List>{products.map(product => <ListItem>
-//                   <ListItemAvatar>
-//                     <Avatar alt='Product Image' src={product.imageURL} />
-//                   </ListItemAvatar>
-//                   <ListItemText
-//                     key={product._id}
-//                     primary={product.title}
-//                     secondary={product.description}
-//                   />
-//                   <ListItemSecondaryAction>
-//                     <div onClick={() => incrementAmountChange(product._id)}>
-//                       <IconButton edge="start" aria-label="delete">
-//                         <Remove />
-//                       </IconButton>
-//                       <IconButton edge="end" aria-label="add">
-//                         <Add />
-//                       </IconButton>
-//                     </div>
-//                   </ListItemSecondaryAction>
-//                 </ListItem>)}
-//                 </List>
-//               </div>
-//             </Grid>
-//           </Grid>
-//         </Container>
-//       </div>
-//     </>
-//   );
-// }
-
-
 import React, { useEffect, useState } from "react";
-import { Avatar, IconButton, makeStyles, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
+import { Avatar, Fab, IconButton, makeStyles, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
 import { Add, Remove } from '@material-ui/icons';
+import AddIcon from '@material-ui/icons/Add';
 import SearchAppBar from "../../components/SearchAppBar/SearchAppBar";
 import productAPI from '../../utils/API_product';
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
+  palette: {
+    primary: "#3f50b5",
+    secondary: "#e53935",
+  },
   root: {
     '& > *': {
       margin: theme.spacing(1),
@@ -78,6 +42,11 @@ export default function UserHome() {
       <SearchAppBar />
       <TableContainer component={Paper} fluid style={{ marginTop: "100px", width: "100%" }}>
         <div className={classes.root}>
+          <Link to="/addnewitem">
+            <Fab variant="extended" color={classes.palette} color="secondary" aria-label="add">
+              <AddIcon />Shopping Cart
+                        </Fab>
+          </Link>
           <Table className={classes.table} aria-label="simple table">
             <TableHead>
               <TableRow>
@@ -102,11 +71,11 @@ export default function UserHome() {
                   <TableCell align="left">{product.description}</TableCell>
                   <TableCell align="center">${product.price}</TableCell>
                   <TableCell align="right">{product.quantity}</TableCell>
-                  <TableCell align="right" >
+                  <TableCell align="right" width="15px">
                     <IconButton className="counter-buttons" edge="end" aria-label="subtract">
                       <Remove />
                     </IconButton></TableCell>
-                  <TableCell align="right">
+                  <TableCell align="right" width="15px">
                     <IconButton className="counter-buttons" edge="end" aria-label="add">
                       <Add />
                     </IconButton></TableCell>
