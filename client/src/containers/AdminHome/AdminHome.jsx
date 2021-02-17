@@ -81,9 +81,15 @@ export default function AdminHome() {
                                     <TableCell align="center">${product.price}</TableCell>
                                     <TableCell align="right">{product.quantity}</TableCell>
                                     <TableCell align="right" width="15px">
-                                        <IconButton className={classes.palette} color="primary" edge="end" aria-label="edit">
-                                            <EditIcon />
-                                        </IconButton></TableCell>
+                                        <Link to={{
+                                            pathname: "/adminedit",
+                                            state: product
+                                        }}>
+                                            <IconButton className={classes.palette} color="primary" edge="end" aria-label="edit">
+                                                <EditIcon />
+                                            </IconButton>
+                                        </Link>
+                                    </TableCell>
                                     <TableCell align="right" width="15px">
                                         <IconButton className={classes.palette} color="secondary" edge="end" aria-label="delete" onClick={() => handleDelete(product._id)}>
                                             <DeleteForeverIcon />

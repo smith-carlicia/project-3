@@ -1,6 +1,8 @@
 # project-3
 
-TODO: delete function for AdminHOME
+TODO: edit route/ function for AdminHOME
+
+TODO: USER MODEL
 
 TODO: Recently bought items model?
 
@@ -15,6 +17,8 @@ TODO: clicking Logo will direct to About page and boot user off authenticated po
 <!-- TODO: navbar shouldnt be on login or signup pages -->
 
 <!-- TODO: change userhome from a list to a table -->
+
+<!-- TODO: delete function for AdminHOME -->
 
 TODO: DEBUG inherited stylings
 
