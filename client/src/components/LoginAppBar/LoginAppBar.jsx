@@ -10,7 +10,6 @@ const LoginAppBar = () => {
       <Box component="header" className="nav-style">
         <div>
         Baby Driver
-        
         <Link to="/" className="home-link">
           <HomeTwoToneIcon />
         </Link>

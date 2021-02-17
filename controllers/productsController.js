@@ -23,17 +23,17 @@ module.exports = {
   },
   deleteProduct: async (req, res) => {
     try {
-      Product.findByIdAndDelete(req.params.id).then((result) => {
-        console.log(result);
-        res.json(result);
-      });
-    } catch (error) {
+      await Product.findByIdAndDelete(req.params.id)
+      const result = await Product.find()
+      res.json(result)
+    }
+    catch (error) {
       res.status(500).send(error);
     }
   },
   updateProduct: async (req, res) => {
     try {
-      Product.findByIdAndUpdate(req.params.id, req.body, { new: true }).then(
+      Product.findByIdAndUpdate({ _id: req.params.id }, req.body).then(
         (result) => {
           console.log(result);
           res.json(result);

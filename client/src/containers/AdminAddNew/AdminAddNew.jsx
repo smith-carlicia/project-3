@@ -4,6 +4,7 @@ import { Avatar, Button, CssBaseline, TextField, Grid, Typography, Container } f
 import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
 import { makeStyles } from '@material-ui/core/styles';
 import productAPI from '../../utils/API_product';
+import LoginAppBar from "../../components/LoginAppBar/LoginAppBar";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -45,10 +46,13 @@ function AdminAddNew() {
   })
   const handleChange = e => {
     const { name, type, value } = e.target;
+    console.log(type);
     const val = type === 'number' ? parseFloat(value) : value
     setProduct({ ...product, [name]: val })
   }
   return (
+    <>
+    <LoginAppBar />
     <Container component="main" maxWidth="md">
       <CssBaseline />
       <div className={classes.paper}>
@@ -67,6 +71,7 @@ function AdminAddNew() {
           })
             .catch((err) => {
               console.log(err);
+              alert("Please fill out missing input(s) to continue...");
             });
           setLoading(false)
           console.log("added Item...")
@@ -161,6 +166,7 @@ function AdminAddNew() {
         </form>
       </div>
     </Container>
+    </>
   );
 }
 

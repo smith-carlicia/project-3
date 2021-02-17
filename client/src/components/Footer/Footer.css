@@ -1,5 +1,6 @@
 footer {
   background-color: rgb(189, 122, 122);
+  border-color: rgb(146, 146, 235);
   border-top: solid;
   bottom: 0;
   max-height: 20px;
@@ -9,9 +10,8 @@ footer {
   width: 100%;
 }
 
-.appBarItems {
+.footerItems {
   color: rgb(230, 216, 216);
   font: serif;
   font-size: 12px;
-  font-style: inherit;
 }

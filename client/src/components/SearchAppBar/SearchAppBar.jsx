@@ -88,7 +88,6 @@ export default function SearchAppBar() {
             <InputBase
               placeholder="Search…"
               classes={{
-                root: classes.inputRoot,
                 input: classes.inputInput,
               }}
               inputProps={{ "aria-label": "search" }}
