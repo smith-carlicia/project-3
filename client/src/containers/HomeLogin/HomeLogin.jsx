@@ -5,7 +5,7 @@ import { Link as Follow } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: "5ch",
+    marginTop: "25ch",
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
