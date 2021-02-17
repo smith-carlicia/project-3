@@ -1,5 +1,6 @@
 import React from 'react';
 import './UserShoppingCart.css';
+import { NavLink } from "react-router-dom";
 import { Grid, AppBar, Toolbar, Paper, Button } from '@material-ui/core';
 
 const UserShoppingCart = () => {
@@ -25,7 +26,9 @@ const UserShoppingCart = () => {
             </Grid>
             <Grid container justify="flex-end">
                 <Button className="checkoutBtn" variant="contained" color="secondary">
-                    Checkout
+                    <NavLink to="/checkout">
+                        Checkout
+                    </NavLink>
                 </Button>
             </Grid>
         </Grid>

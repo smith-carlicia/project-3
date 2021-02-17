@@ -1,21 +1,10 @@
 import React, { useState } from "react";
-import { Avatar, Button, CssBaseline, TextField, Link, Grid, Box, Typography, Container } from '@material-ui/core';
+import { useHistory } from "react-router-dom";
+import { Avatar, Button, CssBaseline, TextField, Grid, Typography, Container } from '@material-ui/core';
 import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
 import { makeStyles } from '@material-ui/core/styles';
 import productAPI from '../../utils/API_product';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Baby Driver
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import LoginAppBar from "../../components/LoginAppBar/LoginAppBar";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -25,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
       theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    marginTop: theme.spacing(8),
+    marginTop: "15ch",
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -45,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
 
 function AdminAddNew() {
   const classes = useStyles();
+  const history = useHistory();
   const [loading, setLoading] = useState(false)
   const [product, setProduct] = useState({
     title: "",
@@ -56,10 +46,13 @@ function AdminAddNew() {
   })
   const handleChange = e => {
     const { name, type, value } = e.target;
+    console.log(type);
     const val = type === 'number' ? parseFloat(value) : value
     setProduct({ ...product, [name]: val })
   }
   return (
+    <>
+    <LoginAppBar />
     <Container component="main" maxWidth="md">
       <CssBaseline />
       <div className={classes.paper}>
@@ -72,7 +65,14 @@ function AdminAddNew() {
         <form className={classes.form} noValidate onSubmit={async e => {
           e.preventDefault()
           setLoading(true);
-          productAPI.createProduct(product);
+          productAPI.createProduct(product).then((response) => {
+            console.log(response.data);
+            history.push("/admin");
+          })
+            .catch((err) => {
+              console.log(err);
+              alert("Please fill out missing input(s) to continue...");
+            });
           setLoading(false)
           console.log("added Item...")
         }}>
@@ -165,12 +165,9 @@ function AdminAddNew() {
           </Button>
         </form>
       </div>
-      <Box mt={5}>
-        <Copyright />
-      </Box>
     </Container>
+    </>
   );
 }
-
 
 export default AdminAddNew;

@@ -1,31 +1,17 @@
 footer {
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: white;
+  background-color: rgb(189, 122, 122);
+  border-color: rgb(146, 146, 235);
   border-top: solid;
-  border-color: rosybrown;
-  border-width: 2px;
+  bottom: 0;
+  max-height: 20px;
+  padding-bottom: 30px;
+  padding-top: 10px;
+  position: fixed;
+  width: 100%;
 }
-.link {
-  color: black;
-  font-style: none;
-}
-.copyright {
-  margin-top: 5rem;
-  padding-top: 2rem;
-  padding-left: 215px;
-}
+
 .footerItems {
-  padding-left: 5rem;
+  color: rgb(230, 216, 216);
+  font: serif;
+  font-size: 12px;
 }
-.know,
-.contact,
-.business {
-  color: black;
-  margin-top: 700px;
-  margin-right: 400px;
-}
-/* .footer {
-    justify-content: center;
-} */

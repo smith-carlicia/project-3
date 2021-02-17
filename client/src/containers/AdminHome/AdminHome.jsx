@@ -1,80 +1,99 @@
 import React, { useEffect, useState } from "react";
-import { makeStyles } from '@material-ui/core/styles';
-import { Avatar, List, ListItem, ListItemAvatar, ListItemSecondaryAction, Grid, ListItemText, Typography, IconButton, Container } from '@material-ui/core';
+import LoginAppBar from "../../components/LoginAppBar/LoginAppBar";
+import { Avatar, IconButton, makeStyles, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core';
+import AddIcon from '@material-ui/icons/Add';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import EditIcon from '@material-ui/icons/Edit';
+import Fab from '@material-ui/core/Fab';
 import productAPI from '../../utils/API_product';
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
-        maxWidth: 752,
+    palette: {
+        primary: "#3f50b5",
+        secondary: "#e53935",
     },
-    demo: {
-        backgroundColor: theme.palette.background.paper,
+    root: {
+        '& > *': {
+            margin: theme.spacing(1),
+        },
+        table: {
+            minWidth: 400,
+        },
     },
     title: {
         margin: theme.spacing(4, 0, 2),
     },
 }));
 
-// function generate(element) {
-//   return [0, 1, 2].map((value) =>
-//     React.cloneElement(element, {
-//       key: value,
-//     }),
-//   );
-// }
-
 export default function AdminHome() {
-    const [products, setProducts] = useState([]);
     const classes = useStyles();
-    const [dense, setDense] = React.useState(false);
-    const [secondary, setSecondary] = React.useState(false);
+    const [products, setProducts] = useState([]);
 
     useEffect(() => {
         productAPI.findAllProducts().then((response) => {
             setProducts(response.data);
-            console.log(response.data);
         })
             .catch((error) => {
                 console.log(error);
             });
     }, []);
 
-    return (
-        <div className={classes.root}>
-            <Container fluid maxWidth="lg">
-                <Grid container>
-                    <Grid item xs={6} md={12} lg={12}>
-                        <Typography variant="h6" className={classes.title} style={{ textAlign: "center" }}>
-                            Admin Page
-          </Typography>
-                        <div className={classes.demo}>
-                            <List dense={dense}>{products.map(product => <ListItem>
-                                <ListItemAvatar>
-                                    <Avatar alt='Product Image' src={product.imageURL} />
-                                </ListItemAvatar>
-                                <ListItemText
-                                    key={product._id}
-                                    primary={product.title}
-                                    secondary={product.description}
-                                />
-                                <ListItemSecondaryAction>
-                                    <IconButton edge="end" aria-label="delete">
-                                        <EditIcon />
-                                    </IconButton>
-                                    <IconButton edge="end" aria-label="delete">
-                                        <DeleteForeverIcon />
-                                    </IconButton>
-                                </ListItemSecondaryAction>
-                            </ListItem>)}
+    const handleDelete = (id) => {
+        const result = productAPI.deleteProduct(id);
+        console.log(result);
+        // setProducts(result.data);
+        window.location.reload();
+    }
 
-                            </List>
-                        </div>
-                    </Grid>
-                </Grid>
-            </Container>
-        </div>
+    return (
+        <>
+            <LoginAppBar />
+            <TableContainer component={Paper} style={{ marginTop: "100px", width: "100%" }}>
+                <div className={classes.root}>
+                    <Link to="/addnewitem">
+                        <Fab variant="extended" className={classes.palette} color="primary" aria-label="add">
+                            <AddIcon />Add Item
+                        </Fab>
+                    </Link>
+                    <Table className={classes.table} aria-label="simple table">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>IMG</TableCell>
+                                <TableCell align="left" >Local Products</TableCell>
+                                <TableCell align="left">Description</TableCell>
+                                <TableCell align="center">Price</TableCell>
+                                <TableCell align="right">Quantity</TableCell>
+                                <TableCell align="right"></TableCell>
+                                <TableCell align="right"></TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {products.map((product) => (
+                                <TableRow key={product._id}>
+                                    <TableCell align="left">
+                                        <Avatar alt='Product Image' src={product.imageURL} />
+                                    </TableCell>
+                                    <TableCell component="th" scope="row">
+                                        {product.title}
+                                    </TableCell>
+                                    <TableCell align="left">{product.description}</TableCell>
+                                    <TableCell align="center">${product.price}</TableCell>
+                                    <TableCell align="right">{product.quantity}</TableCell>
+                                    <TableCell align="right" width="15px">
+                                        <IconButton className={classes.palette} color="primary" edge="end" aria-label="edit">
+                                            <EditIcon />
+                                        </IconButton></TableCell>
+                                    <TableCell align="right" width="15px">
+                                        <IconButton className={classes.palette} color="secondary" edge="end" aria-label="delete" onClick={() => handleDelete(product._id)}>
+                                            <DeleteForeverIcon />
+                                        </IconButton></TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </div>
+            </TableContainer>
+        </>
     );
 }

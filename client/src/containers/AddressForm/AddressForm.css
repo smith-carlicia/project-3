@@ -1,0 +1,34 @@
+.shippingHeader {
+    margin-left: 570px;
+    padding-bottom: 25px;
+}
+
+.names{
+    padding-top: 50px;
+    padding-bottom: 25px;
+}
+
+.addresses {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.location {
+    padding-bottom: 100px;
+}
+
+.first {
+    margin-right: 45px;
+    width: 20%;
+}
+
+.last {
+    margin-left: 25px;
+    width: 20%;
+}
+
+.street {
+    margin-left: 200px;
+    padding-right: 25px;
+    width: 50%;
+}
