@@ -71,7 +71,7 @@ export default function UserHome() {
                   <TableCell align="center">${product.price}</TableCell>
                   <TableCell align="right">{product.quantity}</TableCell>
                   <TableCell align="right" width="15px">
-                    <IconButton className="counter-buttons" edge="end" aria-label="add">
+                    <IconButton id={product._id} className="counter-buttons" edge="end" aria-label="add">
                       <AddCircleTwoToneIcon />
                     </IconButton></TableCell>
                 </TableRow>

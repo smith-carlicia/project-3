@@ -81,7 +81,10 @@ export default function AdminHome() {
                                     <TableCell align="center">${product.price}</TableCell>
                                     <TableCell align="right">{product.quantity}</TableCell>
                                     <TableCell align="right" width="15px">
-                                        <Link to="/adminedit">
+                                        <Link to={{
+                                            pathname: "/adminedit",
+                                            state: product
+                                        }}>
                                             <IconButton className={classes.palette} color="primary" edge="end" aria-label="edit">
                                                 <EditIcon />
                                             </IconButton>

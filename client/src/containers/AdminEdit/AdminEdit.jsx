@@ -32,32 +32,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function AdminEdit() {
+function AdminEdit(props) {
   const classes = useStyles();
   const history = useHistory();
   const [loading, setLoading] = useState(false);
-  const [product, setProduct] = useState({
-
-  });
-
-  useEffect(() => {
-    productAPI.findProductById().then((response) => {
-        // setProduct(response.data);
-        setProduct({
-          _id: "602c8f0cbc394b3460ea3760",
-          title: "NEW",
-          description: "black",
-          price: 10,
-          imageURL: "test",
-          category: "cleaner",
-          quantity: 200
-        });
-        console.log(product);
-    })
-        .catch((error) => {
-            console.log(error);
-        });
-}, []);
+  const [product, setProduct] = useState(props.location.state);
 
   const handleChange = e => {
     const { name, type, value } = e.target;
@@ -88,7 +67,7 @@ function AdminEdit() {
         <form className={classes.form} noValidate onSubmit={async e => {
           e.preventDefault()
           setLoading(true);
-          productAPI.updateProduct(product._id).then((response) => {
+          productAPI.updateProduct(product._id, product).then((response) => {
             console.log(response.data);
             history.push("/admin");
           })
