@@ -12,6 +12,16 @@ module.exports = {
         res.status(500).end();
       });
   },
+  findProductById: (req, res) => {
+    Product.findById(req.params.id)
+      .then((product) => {
+        res.json(product);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).end();
+      });
+  },
   createProduct: async (req, res) => {
     try {
       const product = new Product(req.body);

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Avatar, Button, CssBaseline, TextField, Grid, Typography, Container } from '@material-ui/core';
 import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
@@ -35,25 +35,29 @@ const useStyles = makeStyles((theme) => ({
 function AdminEdit() {
   const classes = useStyles();
   const history = useHistory();
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   const [product, setProduct] = useState({
-    title: "",
-    description: "",
-    price: 0,
-    imageURL: "",
-    category: "",
-    quantity: 0
-  })
 
-  TODO: 
+  });
+
   useEffect(() => {
     productAPI.findProductById().then((response) => {
-      setProduct(response.data);
+        // setProduct(response.data);
+        setProduct({
+          _id: "602c8f0cbc394b3460ea3760",
+          title: "NEW",
+          description: "black",
+          price: 10,
+          imageURL: "test",
+          category: "cleaner",
+          quantity: 200
+        });
+        console.log(product);
     })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+        .catch((error) => {
+            console.log(error);
+        });
+}, []);
 
   const handleChange = e => {
     const { name, type, value } = e.target;
@@ -61,6 +65,14 @@ function AdminEdit() {
     const val = type === 'number' ? parseFloat(value) : value
     setProduct({ ...product, [name]: val })
   }
+
+//   const handleIdLoad = (id) => {
+//     const result = productAPI.deleteProduct(id);
+//     console.log(result);
+//     // setProducts(result.data);
+//     window.location.reload();
+// }
+
   return (
     <>
     <LoginAppBar />
@@ -71,12 +83,12 @@ function AdminEdit() {
           <ChildFriendlyIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Add New Item
+          Edit Item
         </Typography>
         <form className={classes.form} noValidate onSubmit={async e => {
           e.preventDefault()
           setLoading(true);
-          productAPI.createProduct(product).then((response) => {
+          productAPI.updateProduct(product._id).then((response) => {
             console.log(response.data);
             history.push("/admin");
           })
@@ -85,7 +97,7 @@ function AdminEdit() {
               alert("Please fill out missing input(s) to continue...");
             });
           setLoading(false)
-          console.log("added Item...")
+          console.log("Edited Item...")
         }}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
@@ -172,7 +184,7 @@ function AdminEdit() {
             color="primary"
             className={classes.submit}
           >
-            Add Item
+            Edit Item
           </Button>
         </form>
       </div>

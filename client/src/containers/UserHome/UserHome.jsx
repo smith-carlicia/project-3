@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Avatar, Fab, IconButton, makeStyles, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
-import { Add, Remove } from '@material-ui/icons';
+import AddCircleTwoToneIcon from '@material-ui/icons/AddCircleTwoTone';
 import AddIcon from '@material-ui/icons/Add';
 import SearchAppBar from "../../components/SearchAppBar/SearchAppBar";
 import productAPI from '../../utils/API_product';
@@ -40,10 +40,10 @@ export default function UserHome() {
   return (
     <>
       <SearchAppBar />
-      <TableContainer component={Paper} fluid style={{ marginTop: "100px", width: "100%" }}>
+      <TableContainer component={Paper} fluid="true" style={{ marginTop: "100px", width: "100%" }}>
         <div className={classes.root}>
           <Link to="/usershoppingcart">
-            <Fab variant="extended" color={classes.palette} aria-label="add">
+            <Fab variant="extended" className={classes.palette} color="secondary" aria-label="add">
               <AddIcon />Shopping Cart
                         </Fab>
           </Link>
@@ -54,14 +54,13 @@ export default function UserHome() {
                 <TableCell align="left">Product</TableCell>
                 <TableCell align="left">Description</TableCell>
                 <TableCell align="center">Price</TableCell>
-                <TableCell align="right">Quantity</TableCell>
-                <TableCell align="right"></TableCell>
+                <TableCell align="right">In Stock</TableCell>
                 <TableCell align="right"></TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {products.map((product) => (
-                <TableRow key={product.id}>
+                <TableRow key={product._id}>
                   <TableCell align="left">
                     <Avatar alt='Product Image' src={product.imageURL} />
                   </TableCell>
@@ -72,12 +71,8 @@ export default function UserHome() {
                   <TableCell align="center">${product.price}</TableCell>
                   <TableCell align="right">{product.quantity}</TableCell>
                   <TableCell align="right" width="15px">
-                    <IconButton className="counter-buttons" edge="end" aria-label="subtract">
-                      <Remove />
-                    </IconButton></TableCell>
-                  <TableCell align="right" width="15px">
                     <IconButton className="counter-buttons" edge="end" aria-label="add">
-                      <Add />
+                      <AddCircleTwoToneIcon />
                     </IconButton></TableCell>
                 </TableRow>
               ))}
