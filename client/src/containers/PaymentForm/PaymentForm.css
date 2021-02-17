@@ -1,0 +1,41 @@
+.paymentHeader {
+    margin-left: 600px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.name {
+    margin-left: 100px;
+    padding-bottom: 25px;
+}
+
+.info {
+    margin-left: 100px;
+    padding-bottom: 15px;
+}
+
+
+.billingHeader {
+    margin-left: 610px;
+    padding-bottom: 15px;
+}
+
+.location {
+    margin-left: 100px;
+    padding-bottom: 25px;
+}
+
+.city {
+    margin-left: 100px;
+    padding-bottom: 25px;
+}
+
+.stateZip {
+    margin-left: 100px;
+    padding-bottom: 25px;
+}
+
+.zip {
+    margin-left: 100px;
+    margin-bottom: 100px;
+}
