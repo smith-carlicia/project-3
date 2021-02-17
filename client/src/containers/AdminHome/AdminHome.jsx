@@ -39,10 +39,17 @@ export default function AdminHome() {
             });
     }, []);
 
+    const handleDelete = (id) => {
+        const result = productAPI.deleteProduct(id);
+        console.log(result);
+        // setProducts(result.data);
+        window.location.reload();
+    }
+
     return (
         <>
             <LoginAppBar />
-            <TableContainer component={Paper} fluid style={{ marginTop: "100px", width: "100%" }}>
+            <TableContainer component={Paper} style={{ marginTop: "100px", width: "100%" }}>
                 <div className={classes.root}>
                     <Link to="/addnewitem">
                         <Fab variant="extended" className={classes.palette} color="primary" aria-label="add">
@@ -63,7 +70,7 @@ export default function AdminHome() {
                         </TableHead>
                         <TableBody>
                             {products.map((product) => (
-                                <TableRow key={product.id}>
+                                <TableRow key={product._id}>
                                     <TableCell align="left">
                                         <Avatar alt='Product Image' src={product.imageURL} />
                                     </TableCell>
@@ -78,7 +85,7 @@ export default function AdminHome() {
                                             <EditIcon />
                                         </IconButton></TableCell>
                                     <TableCell align="right" width="15px">
-                                        <IconButton className={classes.palette} color="secondary" edge="end" aria-label="delete">
+                                        <IconButton className={classes.palette} color="secondary" edge="end" aria-label="delete" onClick={() => handleDelete(product._id)}>
                                             <DeleteForeverIcon />
                                         </IconButton></TableCell>
                                 </TableRow>

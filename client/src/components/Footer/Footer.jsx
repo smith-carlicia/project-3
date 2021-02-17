@@ -1,13 +1,13 @@
 import './Footer.css';
 import React from "react";
-import { Grid, Typography } from '@material-ui/core';
+import { Container, Grid, Typography } from '@material-ui/core';
 import { Link, NavLink } from "react-router-dom";
 
 function Copyright() {
   return (
     <Typography variant="body2">
       {'Copyright © '}
-      <Link href="https://github.com/badeshiyan/project-3">
+      <Link to="https://github.com/badeshiyan/project-3">
         Baby Driver
       </Link>{' '}
       {new Date().getFullYear()}
@@ -19,7 +19,8 @@ function Copyright() {
 
 const Footer = () => {
   return (
-      <footer>
+    <footer>
+      <Container>
         <Grid container direction="row" spacing={10} justify="center" >
           <Grid item direction="column">
             <NavLink className="footerItems" to="/about">
@@ -35,7 +36,8 @@ const Footer = () => {
                             </NavLink>
           </Grid>
         </Grid>
-      </footer>
+      </Container>
+    </footer>
   )
 }
 
