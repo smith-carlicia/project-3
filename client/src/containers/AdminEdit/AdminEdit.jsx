@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Avatar, Button, CssBaseline, TextField, Grid, Typography, Container } from '@material-ui/core';
 import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';

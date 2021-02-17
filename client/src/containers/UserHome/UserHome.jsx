@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function UserHome() {
   const classes = useStyles();
+  const [shoppingCart, setShoppingCart] = useState([]);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -37,12 +38,21 @@ export default function UserHome() {
       });
   }, []);
 
+  const addItem = (product) => {
+    setShoppingCart({...shoppingCart}, {product})
+    console.log(shoppingCart);
+    // setProducts([shoppingCart]);
+  }
+
   return (
     <>
       <SearchAppBar />
       <TableContainer component={Paper} fluid="true" style={{ marginTop: "100px", width: "100%" }}>
         <div className={classes.root}>
-          <Link to="/usershoppingcart">
+          <Link to={{
+            pathname: "/usershoppingcart",
+            state: [shoppingCart]
+            }}>
             <Fab variant="extended" className={classes.palette} color="secondary" aria-label="add">
               <AddIcon />Shopping Cart
                         </Fab>
@@ -71,7 +81,7 @@ export default function UserHome() {
                   <TableCell align="center">${product.price}</TableCell>
                   <TableCell align="right">{product.quantity}</TableCell>
                   <TableCell align="right" width="15px">
-                    <IconButton id={product._id} className="counter-buttons" edge="end" aria-label="add">
+                    <IconButton className="counter-buttons" edge="end" aria-label="add" onClick={() => addItem(product)}>
                       <AddCircleTwoToneIcon />
                     </IconButton></TableCell>
                 </TableRow>
