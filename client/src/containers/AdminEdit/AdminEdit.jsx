@@ -65,7 +65,7 @@ function AdminEdit(props) {
           Edit Item
         </Typography>
         <form className={classes.form} noValidate onSubmit={async e => {
-          e.preventDefault()
+          e.preventDefault();
           setLoading(true);
           productAPI.updateProduct(product._id, product).then((response) => {
             console.log(response.data);

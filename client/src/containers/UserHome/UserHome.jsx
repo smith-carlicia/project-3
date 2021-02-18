@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function UserHome() {
   const classes = useStyles();
-  const [shoppingCart, setShoppingCart] = useState([]);
+  const shoppingCart = [];
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -39,9 +39,11 @@ export default function UserHome() {
   }, []);
 
   const addItem = (product) => {
-    setShoppingCart({...shoppingCart}, {product})
-    console.log(shoppingCart);
-    // setProducts([shoppingCart]);
+    shoppingCart.push(product);
+  }
+
+  function populateCart() {
+    setProducts(shoppingCart);
   }
 
   return (
@@ -51,9 +53,9 @@ export default function UserHome() {
         <div className={classes.root}>
           <Link to={{
             pathname: "/usershoppingcart",
-            state: [shoppingCart]
-            }}>
-            <Fab variant="extended" className={classes.palette} color="secondary" aria-label="add">
+            state: shoppingCart
+          }}>
+            <Fab variant="extended" className={classes.palette} color="secondary" aria-label="add" onClick={populateCart}>
               <AddIcon />Shopping Cart
                         </Fab>
           </Link>

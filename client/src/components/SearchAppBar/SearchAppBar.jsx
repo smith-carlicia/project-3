@@ -81,18 +81,6 @@ export default function SearchAppBar() {
               Baby Driver
             </Link>
           </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                input: classes.inputInput,
-              }}
-              inputProps={{ "aria-label": "search" }}
-            />
-          </div>
           <div
             id="nav-mobile"
             className="right"
@@ -103,9 +91,6 @@ export default function SearchAppBar() {
             </NavLink>
             <NavLink to="/userhome" className="nav-style">
               <HomeTwoToneIcon />
-            </NavLink>
-            <NavLink to="/usershoppingcart" className="nav-style">
-              <ShoppingCartTwoToneIcon />
             </NavLink>
           </div>
         </Toolbar>
