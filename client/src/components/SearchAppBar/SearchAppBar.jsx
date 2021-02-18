@@ -3,15 +3,12 @@ import React from "react";
 import {
   AppBar,
   fade,
-  InputBase,
   makeStyles,
   Toolbar,
   Typography,
 } from "@material-ui/core";
 import HomeTwoToneIcon from "@material-ui/icons/HomeTwoTone";
 import MeetingRoomTwoToneIcon from "@material-ui/icons/MeetingRoomTwoTone";
-import SearchIcon from "@material-ui/icons/Search";
-import ShoppingCartTwoToneIcon from "@material-ui/icons/ShoppingCartTwoTone";
 import { Link, NavLink } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -80,6 +77,7 @@ export default function SearchAppBar() {
             <Link to="/about" className="nav-style">
               Baby Driver
             </Link>
+
           </Typography>
           <div
             id="nav-mobile"
