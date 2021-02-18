@@ -12,9 +12,6 @@ import MeetingRoomTwoToneIcon from "@material-ui/icons/MeetingRoomTwoTone";
 import { Link, NavLink } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
   root: {
     borderBottom: "solid",
     flexGrow: 1,
