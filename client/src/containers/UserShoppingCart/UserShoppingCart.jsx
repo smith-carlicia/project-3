@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import './UserShoppingCart.css';
-import { Avatar, Fab, IconButton, makeStyles, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
+import { Avatar, Button, IconButton, makeStyles, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
 import SearchAppBar from "../../components/SearchAppBar/SearchAppBar";
-import { NavLink, useHistory } from "react-router-dom";
-import { Grid, AppBar, Toolbar, Button } from '@material-ui/core';
+import { NavLink } from "react-router-dom";
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 const useStyles = makeStyles((theme) => ({
@@ -26,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
 
 function UserShoppingCart(props) {
     const classes = useStyles();
-    const history = useHistory();
     const [products, setProducts] = useState(props.location.state);
 
     const handleDelete = (id) => {
