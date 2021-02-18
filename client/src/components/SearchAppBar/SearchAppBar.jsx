@@ -80,6 +80,7 @@ export default function SearchAppBar() {
             <Link to="/about" className="nav-style">
               Baby Driver
             </Link>
+            
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -88,6 +89,7 @@ export default function SearchAppBar() {
             <InputBase
               placeholder="Search…"
               classes={{
+                root: classes.inputRoot,
                 input: classes.inputInput,
               }}
               inputProps={{ "aria-label": "search" }}
