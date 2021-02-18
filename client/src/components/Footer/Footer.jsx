@@ -7,11 +7,12 @@ function Copyright() {
   return (
     <Typography variant="body2">
       {'Copyright © '}
-      <Link to="https://github.com/badeshiyan/project-3">
+      {/* <Link to="https://github.com/badeshiyan/project-3">
         Baby Driver
-      </Link>{' '}
+      </Link>{' '} */}
       {new Date().getFullYear()}
       {''}
+      - Bambo Adeshiyan, Dempsey Finley-Price, Carlicia Smith
     </Typography>
   );
 }
