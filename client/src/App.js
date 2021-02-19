@@ -9,12 +9,12 @@ import UserAbout from "./containers/About/UserAbout";
 import UserHome from "./containers/UserHome/UserHome";
 import UserShoppingCart from "./containers/UserShoppingCart/UserShoppingCart";
 import Checkout from "./containers/Checkout/Checkout";
-import AddressForm from "./containers/AddressForm/AddressForm";
-import PaymentForm from "./containers/PaymentForm/PaymentForm";
 import Review from "./containers/Review/Review";
 
 function App() {
   return (
+
+    <div id="user-about">
     <Router>
       <Switch>
         <Route exact path="/addnewitem" component={AdminAddNew} />
@@ -26,14 +26,12 @@ function App() {
         <Route exact path="/userhome" component={UserHome} />
         <Route exact path="/usershoppingcart" component={UserShoppingCart} />
         <Route exact path="/checkout" component={Checkout} />
-        <Route exact path="/usershoppingcart" component={UserShoppingCart} />
-        <Route exact path="/addressform" component={AddressForm} />
-        <Route exact path="/paymentform" component={PaymentForm} />
         <Route exact path="/review" component={Review} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/aboutauth" component={AboutAuth} />
       </Switch>
     </Router>
+    </div>
   );
 }
 
