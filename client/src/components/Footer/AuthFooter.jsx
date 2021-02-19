@@ -7,9 +7,6 @@ function Copyright() {
   return (
     <Typography variant="body2">
       {'Copyright © '}
-      {/* <Link to="https://github.com/badeshiyan/project-3">
-        Baby Driver
-      </Link>{' '} */}
       {new Date().getFullYear()}
       {''}
       - Bambo Adeshiyan, Dempsey Finley-Price, Carlicia Smith
@@ -21,7 +18,7 @@ function Copyright() {
 const AuthFooter = () => {
   return (
     <footer>
-      <Container>
+      <Container container="true">
         <Grid container direction="row" spacing={10} justify="center" >
           <Grid item direction="column">
             <NavLink className="footerItems" to="/aboutauth">
