@@ -30,7 +30,11 @@ export default function HomeLogin() {
     <>
       <LoginAppBar />
       <Container component="main" maxWidth="md">
+<<<<<<< HEAD
         <Paper>
+=======
+      <Paper>
+>>>>>>> 1a06dc5d51796ffe96839925bdf4e4493690d74d
         <CssBaseline />
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>

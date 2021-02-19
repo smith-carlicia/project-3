@@ -1,37 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './PaymentForm.css';
 import { Grid, TextField } from '@material-ui/core';
 
 
-const Payment = () => {
+const Payment = ({ nameOnCard, setNameOnCard, cardno, setCardNo, expirationDate, setExpirationDate, cvv, setCvv, addy, setAddy, cty, setCty, st, setSt, zip, setZip}) => {
 
-    const[name, setName] = useState("");
-    const[cardno, setCardNo] = useState("");
-    const[expirationDate, setExpirationDate] = useState("");
-    const[cvv, setCvv] = useState("");
-    const[address, setAddress] = useState("");
-    const[city, setCity] = useState("");
-    const[state, setState] = useState("");
-    const[zipcode, setZipcode] = useState("");
 
     const handleSubmit = (evt) => {
         evt.preventDefault()
+
+        // const pay = { name, cardno, expirationDate, cvv, address, city, state, zipcode};
+        // console.log(pay);
         //whats the goal of submitting the form?
             //high version of state
             // context***
             // localstorage.get.item
     }
 
-    useEffect(()=> {
-        console.log( `Name Changed ${name}`);
-        console.log( `Card No Changed ${cardno}`);
-        console.log( `Expiration Date Changed ${expirationDate}`);
-        console.log( `CVV Changed ${cvv}`);
-        console.log( `Street Address Changed ${address}`);
-        console.log( `City Name Changed ${city}`);
-        console.log( `State Name Changed ${state}`);
-        console.log( `Zipcode Changed ${zipcode}`);
-    })
+    // useEffect(()=> {
+        // console.log( `Name Changed ${name}`);
+        // console.log( `Card No Changed ${cardno}`);
+        // console.log( `Expiration Date Changed ${expirationDate}`);
+        // console.log( `CVV Changed ${cvv}`);
+        // console.log( `Street Address Changed ${addy}`);
+        // console.log( `City Name Changed ${cty}`);
+        // console.log( `State Name Changed ${st}`);
+        // console.log( `Zipcode Changed ${zip}`);
+    // })
 
 
     return(
@@ -57,9 +52,9 @@ const Payment = () => {
                     id="outlined-margin-dense"
                     margin="Name on Card"
                     variant="outlined"
-                    name='name'
-                    value={setName}
-                    onChange={evt => setName(evt.target.value)}
+                    name='nameOnCard'
+                    value={nameOnCard}
+                    onChange={evt => setNameOnCard(evt.target.value)}
                 />
                 <TextField
                     label="Card No."
@@ -67,7 +62,7 @@ const Payment = () => {
                     margin="Card No"
                     variant="outlined"
                     name='cardno'
-                    value={setCardNo}
+                    value={cardno}
                     onChange={evt => setCardNo(evt.target.value)}
                 />
             </Grid>
@@ -84,7 +79,7 @@ const Payment = () => {
                     margin="Expiration Date"
                     variant="outlined"
                     name='expirationDate'
-                    value={setExpirationDate}
+                    value={expirationDate}
                     onChange={evt => setExpirationDate(evt.target.value)}
                 />
                 <TextField
@@ -111,18 +106,18 @@ const Payment = () => {
                     id="outlined-margin-dense"
                     margin="Street Address"
                     variant="outlined"
-                    name='address'
-                    value={address}
-                    onChange={evt => setAddress(evt.target.value)}
+                    name='addy'
+                    value={addy}
+                    onChange={evt => setAddy(evt.target.value)}
                 />
                 <TextField
                     label="City"           
                     id="outlined-margin-dense"
                     margin="City"
                     variant="outlined"
-                    name='city'
-                    value={city}
-                    onChange={evt => setCity(evt.target.value)}
+                    name='cty'
+                    value={cty}
+                    onChange={evt => setCty(evt.target.value)}
                 />
             </Grid>
             <Grid container
@@ -135,9 +130,9 @@ const Payment = () => {
                     id="outlined-margin-dense"
                     margin="State"
                     variant="outlined"
-                    name='state'
-                    value={state}
-                    onChange={evt => setState(evt.target.value)}
+                    name='st'
+                    value={st}
+                    onChange={evt => setSt(evt.target.value)}
                 />
                 <TextField
                     className="textInput"
@@ -145,9 +140,9 @@ const Payment = () => {
                     id="outlined-margin-dense"
                     margin="Zip Code"
                     variant="outlined"
-                    name='zipcode'
-                    value={zipcode}
-                    onChange={evt => setZipcode(evt.target.value)}
+                    name='zip'
+                    value={zip}
+                    onChange={evt => setZip(evt.target.value)}
                 />
                 </Grid>
             </Grid>
