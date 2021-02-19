@@ -14,7 +14,8 @@ const steps = ['Shipping address', 'Payment details', 'Review your order'];
 
 
 export default function Checkout() {
-  const [activeStep, setActiveStep] = useState(0);
+    const [activeStep, setActiveStep] = useState(0);
+
 
 
     const[firstName, setFirstName] = useState("");
@@ -58,28 +59,36 @@ function getStepContent(step) {
                 zip={zip} setZip={setZip}
                 />;
     case 2:
-      return <Review />;
+      return <Review 
+                firstName={firstName} lastName={lastName} 
+                address={address} city={city} 
+                state={state} zipcode={zipcode}
+                nameOnCard={nameOnCard} cardno={cardno} 
+                expirationDate={expirationDate}  cvv={cvv} 
+                addy={addy} cty={cty} 
+                st={st} zip={zip}
+                />;
     default:
       throw new Error('Unknown step');
   }
 }
 
-  useEffect(()=> {
-        console.log( `First Name Changed ${firstName}`);
-        console.log( `Last Name Changed ${lastName}`);
-        console.log( `Street Address Changed ${address}`);
-        console.log( `City Name Changed ${city}`);
-        console.log( `State Name Changed ${state}`);
-        console.log( `Zipcode Changed ${zipcode}`);
-        console.log( `Name Changed ${nameOnCard}`);
-        console.log( `Card No Changed ${cardno}`);
-        console.log( `Expiration Date Changed ${expirationDate}`);
-        console.log( `CVV Changed ${cvv}`);
-        console.log( `Street Address Changed ${addy}`);
-        console.log( `City Name Changed ${cty}`);
-        console.log( `State Name Changed ${st}`);
-        console.log( `Zipcode Changed ${zip}`);
-  },[])
+  // useEffect(()=> {
+  //       console.log( `First Name Changed ${firstName}`);
+  //       console.log( `Last Name Changed ${lastName}`);
+  //       console.log( `Street Address Changed ${address}`);
+  //       console.log( `City Name Changed ${city}`);
+  //       console.log( `State Name Changed ${state}`);
+  //       console.log( `Zipcode Changed ${zipcode}`);
+  //       console.log( `Name Changed ${nameOnCard}`);
+  //       console.log( `Card No Changed ${cardno}`);
+  //       console.log( `Expiration Date Changed ${expirationDate}`);
+  //       console.log( `CVV Changed ${cvv}`);
+  //       console.log( `Street Address Changed ${addy}`);
+  //       console.log( `City Name Changed ${cty}`);
+  //       console.log( `State Name Changed ${st}`);
+  //       console.log( `Zipcode Changed ${zip}`);
+  // },[])
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);

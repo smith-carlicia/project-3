@@ -4,7 +4,9 @@ import Checkout from '../Checkout/Checkout';
 import { Paper, Grid } from '@material-ui/core';
 
 const Review = ({firstName, lastName, address, city, state, zipcode, nameOnCard, cardno, expirationDate, cvv, addy, cty, st, zip}) => {
+   
 
+    // const { firstName, lastName } = checkout;
     // const addressInfo = Address;
     // const paymentInfo = Payment;
     // const listItems = 
