@@ -1,9 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
-const app = express();
 const routes = require("./routes");
 
+const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(express.urlencoded({ extended: true }));
@@ -29,20 +29,6 @@ connection.on("error", (err) => {
 });
 
 app.use(routes);
-
-// const ProductsController = require("./controllers/productsController");
-
-// app.use("/api/products", ProductsController);
-
-// app.get("/api/config", (req, res) => {
-//   res.json({
-//     success: true,
-//   });
-// });
-
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(_dirname, "client/build/index.html"));
-// });
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
