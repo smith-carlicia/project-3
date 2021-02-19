@@ -12,10 +12,6 @@ const userSchema = new Schema({
     type: String,
     trim: true,
   },
-  cart: {
-    type: Array,
-    trim: true,
-  },
 });
 userSchema.pre("save", function (next) {
   this.email = this.email.toLowerCase();
