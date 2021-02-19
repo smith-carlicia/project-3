@@ -2,6 +2,7 @@ import LoginAppBar from "../../components/LoginAppBar/LoginAppBar";
 import { Avatar, Button, Container, CssBaseline, Grid, Link, makeStyles, TextField, Typography } from '@material-ui/core';
 import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
 import { Link as Follow } from "react-router-dom";
+import Paper from "@material-ui/core/Paper";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -9,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    padding: "15px",
   },
   avatar: {
     margin: theme.spacing(1),
@@ -29,6 +31,7 @@ export default function HomeLogin() {
     <>
       <LoginAppBar />
       <Container component="main" maxWidth="md">
+      <Paper>
         <CssBaseline />
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
@@ -84,6 +87,7 @@ export default function HomeLogin() {
             </Grid>
           </form>
         </div>
+        </Paper>
       </Container>
     </>
   );

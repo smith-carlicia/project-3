@@ -2,14 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './AddressForm.css';
 import { Grid, TextField } from '@material-ui/core';
 
-const Address = () => {
+const Address = ({firstName, setFirstName, lastName, setLastName, address, setAddress, city, setCity, state, setState, zipcode, setZipcode}) => {
 
-    const[firstName, setFirstName] = useState("");
-    const[lastName, setLastName] = useState("");
-    const[address, setAddress] = useState("");
-    const[city, setCity] = useState("");
-    const[state, setState] = useState("");
-    const[zipcode, setZipcode] = useState("");
 
     // const handleFirstNameChange =(event)=>{
         
@@ -34,20 +28,13 @@ const Address = () => {
     // }
 
 
-
-    useEffect(()=> {
-        console.log( `First Name Changed ${firstName}`);
-        console.log( `Last Name Changed ${lastName}`);
-        console.log( `Street Address Changed ${address}`);
-        console.log( `City Name Changed ${city}`);
-        console.log( `State Name Changed ${state}`);
-        console.log( `Zipcode Changed ${zipcode}`);
-    })
-
     // create handleSubmit
 
     const handleSubmit = (evt) => {
         evt.preventDefault()
+
+        const area = { firstName, lastName, address, city, state, zipcode};
+        console.log(area);
         //whats the goal of submitting the form?
             //high version of state
             // context***

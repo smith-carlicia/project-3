@@ -36,7 +36,6 @@ export default function SearchAppBar() {
             <Link to="/about" className="nav-style">
               Baby Driver
             </Link>
-
           </Typography>
           <div
             id="nav-mobile"
