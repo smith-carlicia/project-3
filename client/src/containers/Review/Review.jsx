@@ -13,16 +13,22 @@ const Review = ({firstName, lastName, address, city, state, zipcode, nameOnCard,
 
     return(
         <Grid container>
-            <Grid item>
-                <Paper  className="paper" elevation={0}>
+            <Grid item className="review">
+                {/* <Paper  className="review" elevation={0}> */}
                     <Grid item>
                         <h5>Products</h5>
                     </Grid>
                     <Grid item>
                         <h5>Shipping</h5>
+                    </Grid>
+                    <Grid direction="row">
                         <h6>{firstName}</h6>
                         <h6>{lastName}</h6>
+                    </Grid>
+                    <Grid item direction="row">
                         <h6>{address}</h6>
+                    </Grid>
+                    <Grid item direction="row">
                         <h6>{city}</h6>
                         <h6>{state}</h6>
                         <h6>{zipcode}</h6>
@@ -38,7 +44,7 @@ const Review = ({firstName, lastName, address, city, state, zipcode, nameOnCard,
                         <h6>{st}</h6>
                         <h6>{zip}</h6>
                     </Grid>
-                </Paper>
+                {/* </Paper> */}
             </Grid>
         </Grid>
     )
