@@ -9,7 +9,6 @@ import {
 } from "@material-ui/core";
 import HomeTwoToneIcon from "@material-ui/icons/HomeTwoTone";
 import MeetingRoomTwoToneIcon from "@material-ui/icons/MeetingRoomTwoTone";
-import ChildFriendlyTwoToneIcon from '@material-ui/icons/ChildFriendlyTwoTone';
 import { Link, NavLink } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
