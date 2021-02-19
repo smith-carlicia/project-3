@@ -1,14 +1,14 @@
 import React from "react";
 import "./UserAbout.css";
-import Footer from "../../components/Footer/Footer";
-import LoginAppBar from "../../components/LoginAppBar/LoginAppBar";
+import AuthFooter from "../../components/Footer/AuthFooter";
+import SearchAppBar from "../../components/SearchAppBar/SearchAppBar";
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 
-const UserAbout = () => {
+const AboutAuth = () => {
   return (
     <div id="user-about">
-      <LoginAppBar />
+      <SearchAppBar />
 
       <Container style={{ marginTop: "100px" }}>
         <Paper>
@@ -29,9 +29,9 @@ const UserAbout = () => {
           </div>
         </Paper>
       </Container>
-      <Footer />
+      <AuthFooter />
     </div>
   );
 };
 
-export default UserAbout;
+export default AboutAuth;

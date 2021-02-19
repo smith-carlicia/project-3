@@ -18,13 +18,13 @@ function Copyright() {
 }
 
 
-const Footer = () => {
+const AuthFooter = () => {
   return (
     <footer>
       <Container>
         <Grid container direction="row" spacing={10} justify="center" >
           <Grid item direction="column">
-            <NavLink className="footerItems" to="/about">
+            <NavLink className="footerItems" to="/aboutauth">
               About & Contact
                             </NavLink>
           </Grid>
@@ -42,4 +42,4 @@ const Footer = () => {
   )
 }
 
-export default Footer;
+export default AuthFooter;
