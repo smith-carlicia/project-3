@@ -1,10 +1,12 @@
 # project-3
 
-TODO: edit route/ function for AdminHOME
+<!-- TODO: edit route/ function for AdminHOME -->
 
-TODO: USER MODEL
+TODO: Find Material UI alerts for clicks
 
-TODO: Recently bought items model?
+TODO: Line 34 UserShoppingCart slicing wrong product
+
+<!-- TODO: USER MODEL -->
 
 TODO: clicking Logo will direct to About page and boot user off authenticated portion of site
 

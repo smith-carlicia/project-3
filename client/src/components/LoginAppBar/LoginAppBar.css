@@ -1,5 +1,5 @@
 .nav-style {
-  /* background-color: rgb(156, 161, 155); */
+  background-color: rgb(189, 122, 122);
   border-width: 8px;
   color: rgb(12, 11, 11);
   font-size: xx-large;
@@ -8,8 +8,8 @@
 }
 
 .home-link {
-  /* background-color: rgb(189, 122, 122); */
-  color: rgb(12, 12, 12);
+  background-color: rgb(189, 122, 122);
+  color: rgb(5, 5, 5);
   max-height: 100px;
   float: right;
 }

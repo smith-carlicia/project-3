@@ -52,120 +52,119 @@ function AdminAddNew() {
   }
   return (
     <>
-    <LoginAppBar />
-    <Container component="main" maxWidth="md">
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <ChildFriendlyIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Add New Item
+      <LoginAppBar />
+      <Container component="main" maxWidth="md">
+        <CssBaseline />
+        <div className={classes.paper}>
+          <Avatar className={classes.avatar}>
+            <ChildFriendlyIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Add New Item
         </Typography>
-        <form className={classes.form} noValidate onSubmit={async e => {
-          e.preventDefault()
-          setLoading(true);
-          productAPI.createProduct(product).then((response) => {
-            console.log(response.data);
-            history.push("/admin");
-          })
-            .catch((err) => {
-              console.log(err);
-              alert("Please fill out missing input(s) to continue...");
-            });
-          setLoading(false)
-          console.log("added Item...")
-        }}>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <TextField onChange={event => handleChange(event)}
-                variant="outlined"
-                required
-                fullWidth
-                id="title"
-                label="title"
-                name="title"
-                autoComplete="title"
-                value={product.title}
-              />
+          <form className={classes.form} noValidate onSubmit={async e => {
+            e.preventDefault()
+            setLoading(true);
+            productAPI.createProduct(product).then((response) => {
+              console.log(response.data);
+              history.push("/admin");
+            })
+              .catch((err) => {
+                console.log(err);
+              });
+            setLoading(false)
+            console.log("added Item...")
+          }}>
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <TextField onChange={event => handleChange(event)}
+                  variant="outlined"
+                  required
+                  fullWidth
+                  id="title"
+                  label="title"
+                  name="title"
+                  autoComplete="title"
+                  value={product.title}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField onChange={event => handleChange(event)}
+                  variant="outlined"
+                  required
+                  fullWidth
+                  id="description"
+                  label="description"
+                  name="description"
+                  autoComplete="description"
+                  value={product.description}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField onChange={event => handleChange(event)}
+                  variant="outlined"
+                  required
+                  fullWidth
+                  name="price"
+                  label="price"
+                  type="price"
+                  id="price"
+                  autoComplete="price"
+                  value={product.price}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField onChange={event => handleChange(event)}
+                  variant="outlined"
+                  required
+                  fullWidth
+                  name="imageURL"
+                  label="imageURL"
+                  type="pic"
+                  id="imageURL"
+                  autoComplete="imageURL"
+                  value={product.imageURL}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField onChange={event => handleChange(event)}
+                  variant="outlined"
+                  required
+                  fullWidth
+                  name="category"
+                  label="category"
+                  type="category"
+                  id="category"
+                  autoComplete="category"
+                  value={product.category}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField onChange={event => handleChange(event)}
+                  variant="outlined"
+                  required
+                  fullWidth
+                  name="quantity"
+                  label="quantity"
+                  type="quantity"
+                  id="quantity"
+                  autoComplete="quantity"
+                  value={product.quantity}
+                />
+              </Grid>
             </Grid>
-            <Grid item xs={12}>
-              <TextField onChange={event => handleChange(event)}
-                variant="outlined"
-                required
-                fullWidth
-                id="description"
-                label="description"
-                name="description"
-                autoComplete="description"
-                value={product.description}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField onChange={event => handleChange(event)}
-                variant="outlined"
-                required
-                fullWidth
-                name="price"
-                label="price"
-                type="price"
-                id="price"
-                autoComplete="price"
-                value={product.price}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField onChange={event => handleChange(event)}
-                variant="outlined"
-                required
-                fullWidth
-                name="imageURL"
-                label="imageURL"
-                type="pic"
-                id="imageURL"
-                autoComplete="imageURL"
-                value={product.imageURL}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField onChange={event => handleChange(event)}
-                variant="outlined"
-                required
-                fullWidth
-                name="category"
-                label="category"
-                type="category"
-                id="category"
-                autoComplete="category"
-                value={product.category}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField onChange={event => handleChange(event)}
-                variant="outlined"
-                required
-                fullWidth
-                name="quantity"
-                label="quantity"
-                type="quantity"
-                id="quantity"
-                autoComplete="quantity"
-                value={product.quantity}
-              />
-            </Grid>
-          </Grid>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
-            Add Item
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+            >
+              Add Item
           </Button>
-        </form>
-      </div>
-    </Container>
+          </form>
+        </div>
+      </Container>
     </>
   );
 }

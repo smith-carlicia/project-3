@@ -1,4 +1,5 @@
 import LoginAppBar from "../../components/LoginAppBar/LoginAppBar";
+import Footer from "../../components/Footer/Footer";
 import { Avatar, Button, Container, CssBaseline, Grid, Link, makeStyles, TextField, Typography } from '@material-ui/core';
 import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
 import { Link as Follow } from "react-router-dom";
@@ -10,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    padding: "15px",
   },
   avatar: {
     margin: theme.spacing(1),
@@ -30,64 +32,65 @@ export default function HomeLogin() {
     <>
       <LoginAppBar />
       <Container component="main" maxWidth="md">
-      <Paper>
-        <CssBaseline />
-        <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <ChildFriendlyIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign in
+        <Paper>
+          <CssBaseline />
+          <div className={classes.paper}>
+            <Avatar className={classes.avatar}>
+              <ChildFriendlyIcon />
+            </Avatar>
+            <Typography component="h1" variant="h5">
+              Sign in
         </Typography>
-          <form className={classes.form} noValidate>
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <Follow to='/userhome'><Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
-              Sign In
+            <form className={classes.form} noValidate>
+              <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                id="email"
+                label="Email Address"
+                name="email"
+                autoComplete="email"
+                autoFocus
+              />
+              <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                autoComplete="current-password"
+              />
+              <Follow to='/userhome'><Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="primary"
+                className={classes.submit}
+              >
+                Sign In
           </Button>
-            </Follow>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
+              </Follow>
+              <Grid container>
+                <Grid item xs>
+                  <Link href="#" variant="body2">
+                    Forgot password?
               </Link>
+                </Grid>
+                <Grid item>
+                  <Follow to='/signup' variant="body2">
+                    {"Don't have an account? Sign Up"}
+                  </Follow>
+                </Grid>
               </Grid>
-              <Grid item>
-                <Follow to='/signup' variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Follow>
-              </Grid>
-            </Grid>
-          </form>
-        </div>
+            </form>
+          </div>
         </Paper>
       </Container>
+      <Footer />
     </>
   );
 }

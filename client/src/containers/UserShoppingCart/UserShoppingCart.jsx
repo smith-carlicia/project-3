@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './UserShoppingCart.css';
+import AuthFooter from "../../components/Footer/AuthFooter";
 import { Avatar, Button, IconButton, makeStyles, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
 import SearchAppBar from "../../components/SearchAppBar/SearchAppBar";
 import { NavLink } from "react-router-dom";
@@ -86,6 +87,7 @@ function UserShoppingCart(props) {
                     </Button>
                 </div>
             </TableContainer>
+            <AuthFooter />
         </>
     )
 }

@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Final Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Application Requirements
 
-## Available Scripts
+* Must use ReactJS in some way
 
-In the project directory, you can run:
+* Must use a Node and Express Web Server
 
-### `npm start`
+* Must be backed by a MySQL or MongoDB database with a Sequelize or Mongoose ORM
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* Must have CRUD routes for at least one model.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* Must deploy this application using Heroku with data. Follow our guide on [deploying MERN applications to Heroku](../04-Important/MERNHerokuDeploy.md) to do so.
 
-### `npm test`
+* Must utilize at least 2 libraries, packages, or technologies that we haven't discussed
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Must allow for or involve the authentication of users in some way
 
-### `npm run build`
+* Must have a polished front end/UI, not Bootstrap.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Must have a folder structure that meets the MVC paradigm
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Must meet good quality coding standards (indentation, scoping, naming)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Must protect API keys in Node with environment variables
 
-### `npm run eject`
+## Presentation Requirements
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Use this [project presentation template](https://docs.google.com/presentation/d/1_u8TKy5zW5UlrVQVnyDEZ0unGI2tjQPDEpA0FNuBKAw/edit?usp=sharing) to address the following: 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Elevator pitch: a one minute description of your application
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* Concept: What is your user story? What was your motivation for development?
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
 
-## Learn More
+* Demo: Show your stuff!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Directions for Future Development
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Links to to the deployed application and the GitHub repository
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Grading Metrics 
 
-### Analyzing the Bundle Size
+| Metric        | Weight | 
+| ---           | ---    |
+| Concept       | 10%    |
+| Design        | 20%    |
+| Functionality | 30%    |
+| Collaboration | 30%    |
+| Presentation  | 10%    |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## Submission on BCS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+You are required to submit the following:
 
-### Advanced Configuration
+* The URL of the deployed application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* The URL of the GitHub repository
