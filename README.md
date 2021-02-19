@@ -6,7 +6,7 @@ TODO: Find Material UI alerts for clicks
 
 TODO: Line 34 UserShoppingCart slicing wrong product
 
-TODO: USER MODEL
+<!-- TODO: USER MODEL -->
 
 TODO: clicking Logo will direct to About page and boot user off authenticated portion of site
 
