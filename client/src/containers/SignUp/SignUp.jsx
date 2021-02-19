@@ -1,8 +1,11 @@
+import React, { useState } from "react";
 import './SignUp.css';
+import Footer from "../../components/Footer/Footer";
+import userAPI from '../../utils/API_user';
 import LoginAppBar from "../../components/LoginAppBar/LoginAppBar";
 import { Avatar, Button, Container, CssBaseline, Grid, makeStyles, TextField, Typography } from '@material-ui/core';
 import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
-import { Link as Follow } from "react-router-dom";
+import { useHistory, Link as Follow } from "react-router-dom";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -17,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    padding: "15px",
   },
   avatar: {
     margin: theme.spacing(1),
@@ -33,6 +37,20 @@ const useStyles = makeStyles((theme) => ({
 
 function SignUp() {
   const classes = useStyles();
+  const history = useHistory();
+  const [loading, setLoading] = useState(false)
+  const [user, setUser] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: ""
+  })
+  const handleChange = e => {
+    const { name, type, value } = e.target;
+    const val = type === 'number' ? parseFloat(value) : value
+    setUser({ ...user, [name]: val })
+    console.log(user);
+  }
   return (
     <>
       <LoginAppBar />
@@ -45,10 +63,22 @@ function SignUp() {
           <Typography component="h1" variant="h5">
             Getting Started
         </Typography>
-          <form className={classes.form} noValidate>
+          <form className={classes.form} noValidate onSubmit={async e => {
+            e.preventDefault()
+            setLoading(true);
+            userAPI.createUser(user).then((response) => {
+              console.log(response.data);
+              history.push("/userhome");
+            })
+              .catch((err) => {
+                console.log(err);
+              });
+            setLoading(false)
+            console.log("added User...")
+          }}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
-                <TextField
+                <TextField onChange={event => handleChange(event)}
                   className="textfield"
                   autoComplete="fname"
                   name="firstName"
@@ -57,11 +87,11 @@ function SignUp() {
                   fullWidth
                   id="firstName"
                   label="First Name"
-                  autoFocus
+                  value={user.firstName}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
-                <TextField
+                <TextField onChange={event => handleChange(event)}
                   variant="outlined"
                   required
                   fullWidth
@@ -69,10 +99,11 @@ function SignUp() {
                   label="Last Name"
                   name="lastName"
                   autoComplete="lname"
+                  value={user.lastName}
                 />
               </Grid>
               <Grid item xs={12}>
-                <TextField
+                <TextField onChange={event => handleChange(event)}
                   variant="outlined"
                   required
                   fullWidth
@@ -80,10 +111,11 @@ function SignUp() {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  value={user.email}
                 />
               </Grid>
               <Grid item xs={12}>
-                <TextField
+                <TextField onChange={event => handleChange(event)}
                   variant="outlined"
                   required
                   fullWidth
@@ -92,10 +124,11 @@ function SignUp() {
                   type="password"
                   id="password"
                   autoComplete="current-password"
+                  value={user.password}
                 />
               </Grid>
             </Grid>
-            <Follow to='/userhome'><Button
+            <Button
               type="submit"
               fullWidth
               variant="contained"
@@ -104,7 +137,6 @@ function SignUp() {
             >
               Sign Up
           </Button>
-            </Follow>
             <Grid item>
               <Follow to='/' variant="body2">
                 {" Already have an account? Sign in"}
@@ -113,6 +145,7 @@ function SignUp() {
           </form>
         </div>
       </Container>
+      <Footer />
     </>
   );
 }

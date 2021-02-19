@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import AuthFooter from "../../components/Footer/AuthFooter";
 import { Avatar, Fab, IconButton, makeStyles, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
 import AddCircleTwoToneIcon from '@material-ui/icons/AddCircleTwoTone';
 import AddIcon from '@material-ui/icons/Add';
@@ -92,6 +93,7 @@ export default function UserHome() {
           </Table>
         </div>
       </TableContainer>
+      <AuthFooter />
     </>
   );
 }
