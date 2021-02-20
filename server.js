@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 mongoose
-  .connect(process.env.MONGODB_URI || "mongodb://localhost/baby-driver", {
+  .connect("mongodb+srv://Dempsey:Password1234@cluster0.ilcbi.mongodb.net/BBdriver?retryWrites=true&w=majority" || "mongodb://localhost/baby-driver", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
