@@ -41,10 +41,22 @@ Baby Driver is an application built for parents to order baby supplies and havin
 
 ## Screenshots
 
+### Login
+![login](./assets/bd-1.png)
+
+### Home
+![home](./assets/bd-2.png)
+
+### Shopping Cart
+![cart](./assets/bd-3.png)
+
+### Checkout
+![checkout](./assets/bd-4.png)
 
 
 ## Deployment:
 
+[Deployed Link](https://babydriver66.herokuapp.com/)
 
 
 ## Github Repo:
@@ -57,7 +69,9 @@ Baby Driver is an application built for parents to order baby supplies and havin
 * Dempsey: Backend
 
 ## Contributors :
-
+* Bambo
+* Carlicia
+* Dempsey
 
 
 ## Questions :
@@ -80,29 +94,5 @@ Dempsey
 
 
 
-<!-- TODO: edit route/ function for AdminHOME -->
 
-TODO: Find Material UI alerts for clicks
-
-TODO: Line 34 UserShoppingCart slicing wrong product
-
-<!-- TODO: USER MODEL -->
-
-TODO: clicking Logo will direct to About page and boot user off authenticated portion of site
-
-<!-- TODO: ProductsController -->
-
-<!-- TODO: Work on delete route/ FULL CRUD -->
-
-<!-- TODO: Fix appbar color -->
-
-<!-- TODO: navbar shouldnt be on login or signup pages -->
-
-<!-- TODO: change userhome from a list to a table -->
-
-<!-- TODO: delete function for AdminHOME -->
-
-TODO: DEBUG inherited stylings
-
-<!-- TODO: add checkout button on userhome -->
 
