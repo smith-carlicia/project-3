@@ -1,4 +1,5 @@
 import axios from "axios";
+
 const productAPI = {
   findAllProducts: function () {
     return axios.get("/api/product");
