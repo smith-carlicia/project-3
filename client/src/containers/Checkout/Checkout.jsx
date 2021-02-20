@@ -1,11 +1,5 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
-// import {  StepLabel, Stepper  } from '@material-ui/core/styles';
-import { Button, Paper, Step, Stepper, StepLabel } from '@material-ui/core';
-=======
-import React, { useState, useEffect }  from 'react';
-import { Button, Card, Step, Stepper, StepLabel } from '@material-ui/core';
->>>>>>> 0464a0ee69b8965abf1d5572ea21d546a916a2ce
+import { Button, Paper, Step, Stepper, StepLabel, Card } from '@material-ui/core';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import AddressForm from '../AddressForm/AddressForm';
@@ -136,24 +130,9 @@ export default function Checkout() {
                     >
                       {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
                     </Button>
-<<<<<<< HEAD
                   </div>
                 </React.Fragment>
               )}
-=======
-                  )}
-                  <Button
-                    className="next"
-                    variant="outlined" 
-                    onClick={handleNext}
-                    color="secondary"
-                  >
-                    {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
-                  </Button>
-                </div>
-              </React.Fragment>
-            )}
->>>>>>> 0464a0ee69b8965abf1d5572ea21d546a916a2ce
           </React.Fragment>
         </Card>
       </main>

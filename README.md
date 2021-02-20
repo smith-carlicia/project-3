@@ -1,108 +1,76 @@
 # Baby Driver
 
+* Deployed Site: https://babydriver66.herokuapp.com/ 
+
 ## Description :
 
 Baby Driver is an application built for parents to order baby supplies and having it delivered to their door without having to leave the safety of their home amid the current COVID climate.
 
+***
 ## Table of Contents :
-* [Description](#Description)
-* [Installation](#Installation)
-* [Usage](#Uuage)
-* [Technologies](#Technologies)
-* [Screenshots](#Screenshots)
-* [Deployment](#Deployment)
-* [Github Repo](#GithubRepo)
-* [Credits](#Credits)
-* [License](#License)
-* [Badge](#Badge)
-* [Contributors](#Contributors)
-* [Tests](#Tests)
 
-## Installation :
-1. Open link in [Github](https://github.com/badeshiyan/project-3.git).
-2. Clone with SSH Key from the repo.
-3. Run git clone command in Terminal with the pasted link.
-4. Run code . command to open in VS Code.
-5. Run npm install to install all dependencies
-6. Run npm start to initialize the server on your local.
+1. [Technologies](#tech)
+2. [Screenshots](#shots)
+3. [Github Repo](#repo)
+4. [Credits](#creds)
+5. [Contributors](#help)
+6. [License](#lice)
 
-## Usage :
-
+***
+<a name="tech"></a>
 
 ## Technologies:
-* MongoDB
-* Express.js
+* MongoDB/ Atlas
+* Mongoose
+* Express
 * React.js
 * Node.js
 * Material-UI
 * Heroku
 
-
+***
+<a name="shots"></a>
 
 ## Screenshots
+![Admin Home Screenshot](client\assets\images\bbAdminHome.png)
+![User Home Screenshot](./client\assets\images\bbUserHome.png)
 
-
-
-## Deployment:
-
-
+***
+<a name="repo"></a>
 
 ## Github Repo:
-[Repo](https://github.com/badeshiyan/project-3.git)
+[Repo](https://github.com/Dempsey496/project-3)
 
-
-## Credits : 
-* Bambo: Backend
-* Carlicia: Frontend
-* Dempsey: Backend
+***
+<a name="creds"></a>
 
 ## Contributors :
 
+* Dempsey: MVC, Models, Database, Routes, Header, Footer, UserHome, all Admin pages,ShoppingCart page, and code debugger
+* Bambo: Started React Router, About page, and set background image
+* Carlicia: Checkout, PaymentForm, and Review pages
 
+***
+<a name="lice"></a>
 
-## Questions :
- If you want to contact us :
+## MIT License
 
- Bambo 
-* [Github](https://github.com/badeshiyan)
-* [LinkedIn](https://www.linkedin.com/in/badeshiyan/)
-* Email : badeshiyan@gmail.com
+Copyright (c) 2020 Dempsey496
 
-Carlicia
-* [Github](https://github.com/smith-carlicia)
-* [LinkedIn](https://www.linkedin.com/in/carlicia-smith-613194b4/)
-* Email : smith.carlicia@gmail.com
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-Dempsey 
-* [Github](https://github.com/Dempsey496)
-* [LinkedIn](https://www.linkedin.com/in/dempsey-finley-price-81ba651b3/)
-* Email : dempseyfinley@gmail.com
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-
-
-<!-- TODO: edit route/ function for AdminHOME -->
-
-TODO: Find Material UI alerts for clicks
-
-TODO: Line 34 UserShoppingCart slicing wrong product
-
-<!-- TODO: USER MODEL -->
-
-TODO: clicking Logo will direct to About page and boot user off authenticated portion of site
-
-<!-- TODO: ProductsController -->
-
-<!-- TODO: Work on delete route/ FULL CRUD -->
-
-<!-- TODO: Fix appbar color -->
-
-<!-- TODO: navbar shouldnt be on login or signup pages -->
-
-<!-- TODO: change userhome from a list to a table -->
-
-<!-- TODO: delete function for AdminHOME -->
-
-TODO: DEBUG inherited stylings
-
-<!-- TODO: add checkout button on userhome -->
-
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
