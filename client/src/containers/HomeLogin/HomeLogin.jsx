@@ -76,7 +76,7 @@ export default function HomeLogin() {
               </Follow>
               <Grid container>
                 <Grid item xs>
-                  <Link href="#" variant="body2">
+                  <Link href="https://github.com/badeshiyan/project-3/graphs/contributors" variant="body2">
                     Forgot password?
               </Link>
                 </Grid>
