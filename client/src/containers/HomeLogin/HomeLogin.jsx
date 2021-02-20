@@ -4,6 +4,7 @@ import { Avatar, Button, Container, CssBaseline, Grid, Link, makeStyles, TextFie
 import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
 import { Link as Follow } from "react-router-dom";
 import Paper from "@material-ui/core/Paper";
+import { useState } from "react";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -29,6 +30,16 @@ const useStyles = makeStyles((theme) => ({
 
 export default function HomeLogin() {
   const classes = useStyles();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault()
+
+    setEmail(evt.target.value)
+    setPassword(evt.target.value)
+  }
   return (
     <>
       <LoginAppBar />
@@ -53,6 +64,9 @@ export default function HomeLogin() {
                 name="email"
                 autoComplete="email"
                 autoFocus
+                name='email'
+                value={email}
+                onChange={handleSubmit}
               />
               <TextField
                 variant="outlined"
@@ -64,6 +78,9 @@ export default function HomeLogin() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                name='password'
+                value={password}
+                onChange={handleSubmit}
               />
               <Follow to='/userhome'><Button
                 type="submit"
