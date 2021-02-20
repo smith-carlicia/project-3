@@ -1,6 +1,5 @@
 import React, { useState, useEffect }  from 'react';
-// import {  StepLabel, Stepper  } from '@material-ui/core/styles';
-import { Button, Paper, Step, Stepper, StepLabel } from '@material-ui/core';
+import { Button, Card, Step, Stepper, StepLabel } from '@material-ui/core';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import AddressForm from '../AddressForm/AddressForm';
@@ -102,14 +101,14 @@ function getStepContent(step) {
     <React.Fragment>
       <CssBaseline />
       <main>
-        <Paper>
+        <Card className="checkoutProcess">
           <Typography component="h1" variant="h4" align="center">
             Checkout
           </Typography>
           <Stepper activeStep={activeStep}>
             {steps.map((label) => (
-              <Step key={label}>
-                <StepLabel>{label}</StepLabel>
+              <Step className="step" key={label}>
+                <StepLabel className="label">{label}</StepLabel>
               </Step>
             ))}
           </Stepper>
@@ -117,7 +116,7 @@ function getStepContent(step) {
             {activeStep === steps.length ? (
               <React.Fragment>
                 <Typography variant="h5" gutterBottom>
-                  Thank you for your order.
+                  Your order is on the way!
                 </Typography>
                 <Typography variant="subtitle1">
                   Your order number is #2001539. We have emailed your order confirmation, and will
@@ -134,9 +133,10 @@ function getStepContent(step) {
                     </Button>
                   )}
                   <Button
-                    variant="contained"
-                    color="primary"
+                    className="next"
+                    variant="outlined" 
                     onClick={handleNext}
+                    color="secondary"
                   >
                     {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
                   </Button>
@@ -144,7 +144,7 @@ function getStepContent(step) {
               </React.Fragment>
             )}
           </React.Fragment>
-        </Paper>
+        </Card>
       </main>
     </React.Fragment>
   );
