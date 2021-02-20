@@ -1,5 +1,8 @@
-.paper {
-    height: 487px;
+.review {
+    margin-top: 25px;
+    padding-left: 400px;
+    height: 387px;
     width: 400px;
-    background-color:rosybrown
+    background-color: none;
 }
+
