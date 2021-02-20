@@ -1,28 +1,76 @@
-# project-3
+# Baby Driver
 
-<!-- TODO: edit route/ function for AdminHOME -->
+* Deployed Site: https://babydriver66.herokuapp.com/ 
 
-TODO: Find Material UI alerts for clicks
+## Description :
 
-TODO: Line 34 UserShoppingCart slicing wrong product
+Baby Driver is an application built for parents to order baby supplies and having it delivered to their door without having to leave the safety of their home amid the current COVID climate.
 
-<!-- TODO: USER MODEL -->
+***
 
-TODO: clicking Logo will direct to About page and boot user off authenticated portion of site
+## Table of Contents :
+1. [Technologies](#tech)
+2. [Screenshots](#shots)
+3. [Github Repo](#repo)
+4. [Credits](#creds)
+5. [Contributors](#help)
+6. [License](#lice)
 
-<!-- TODO: ProductsController -->
+***
+<a name="tech"></a>
 
-<!-- TODO: Work on delete route/ FULL CRUD -->
+## Technologies:
+* MongoDB/ Atlas
+* Mongoose
+* Express
+* React.js
+* Node.js
+* Material-UI
+* Heroku
 
-<!-- TODO: Fix appbar color -->
+***
+<a name="shots"></a>
 
-<!-- TODO: navbar shouldnt be on login or signup pages -->
+## Screenshots
+![Admin Home Screenshot](client\assets\images\bbAdminHome.png)
+![User Home Screenshot](./client\assets\images\bbUserHome.png)
 
-<!-- TODO: change userhome from a list to a table -->
+***
+<a name="repo"></a>
 
-<!-- TODO: delete function for AdminHOME -->
+## Github Repo:
+[Repo](https://github.com/Dempsey496/project-3)
 
-TODO: DEBUG inherited stylings
+***
+<a name="creds"></a>
 
-<!-- TODO: add checkout button on userhome -->
+## Contributors :
 
+* Dempsey: MVC, Models, Database, Routes, Header, Footer, UserHome, all Admin pages,ShoppingCart page, and code debugger
+* Bambo: Started React Router, About page, and set background image
+* Carlicia: Checkout, PaymentForm, and Review pages
+
+***
+<a name="lice"></a>
+
+## MIT License
+
+Copyright (c) 2020 Dempsey496
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

@@ -49,7 +49,6 @@ function SignUp() {
     const { name, type, value } = e.target;
     const val = type === 'number' ? parseFloat(value) : value
     setUser({ ...user, [name]: val })
-    console.log(user);
   }
   return (
     <>
@@ -67,7 +66,6 @@ function SignUp() {
             e.preventDefault()
             setLoading(true);
             userAPI.createUser(user).then((response) => {
-              console.log(response.data);
               history.push("/userhome");
             })
               .catch((err) => {
