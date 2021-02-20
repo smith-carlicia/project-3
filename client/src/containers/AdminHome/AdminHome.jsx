@@ -31,8 +31,9 @@ export default function AdminHome() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        productAPI.findAllProducts().then((response) => {
+        productAPI.findAllProducts([]).then((response) => {
             setProducts(response.data);
+            console.log(response.data);
         })
             .catch((error) => {
                 console.log(error);

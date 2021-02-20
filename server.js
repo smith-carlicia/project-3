@@ -1,25 +1,23 @@
+// require('dotenv').config()
 const express = require("express");
 const mongoose = require("mongoose");
+const path = require("path");
+const app = express();
 const routes = require("./routes");
 
-const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));  
-}
+app.use(express.static("client/build"));
 
-mongoose
-  .connect("mongodb+srv://Dempsey:Password1234@cluster0.ilcbi.mongodb.net/BBdriver?retryWrites=true&w=majority" || "mongodb://localhost/baby-driver", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true,
-  })
-  .catch((err) => console.log("Mongoose connection error: ", err));
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/babydriver", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true,
+});
 
 const connection = mongoose.connection;
 
@@ -32,6 +30,20 @@ connection.on("error", (err) => {
 });
 
 app.use(routes);
+
+// const ProductsController = require("./controllers/productsController");
+
+// app.use("/api/products", ProductsController);
+
+// app.get("/api/config", (req, res) => {
+//   res.json({
+//     success: true,
+//   });
+// });
+
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(_dirname, "client/build/index.html"));
+// });
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

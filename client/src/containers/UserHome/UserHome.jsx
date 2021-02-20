@@ -33,8 +33,7 @@ export default function UserHome() {
   useEffect(() => {
     productAPI.findAllProducts().then((response) => {
       setProducts(response.data);
-    })
-      .catch((error) => {
+    }).catch((error) => {
         console.log(error);
       });
   }, []);
