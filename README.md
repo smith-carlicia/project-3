@@ -7,8 +7,8 @@
 Baby Driver is an application built for parents to order baby supplies and having it delivered to their door without having to leave the safety of their home amid the current COVID climate.
 
 ***
-## Table of Contents :
 
+## Table of Contents :
 1. [Technologies](#tech)
 2. [Screenshots](#shots)
 3. [Github Repo](#repo)
