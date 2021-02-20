@@ -7,12 +7,10 @@ import Paper from "@material-ui/core/Paper";
 
 const AboutAuth = () => {
   return (
-    <div id="user-about">
+    <div className="user-about">
       <SearchAppBar />
-
-      <Container style={{ marginTop: "100px" }}>
-        <Paper>
-          <div className="col s12">
+      <Container maxWidth="lg">
+        <Paper className="paper-content">
             Baby Driver is a unique app that gives its users (typically mothers
             with young children), the ability to order baby-specific supplies
             from the comfort of their own home, or closest tech device. Created
@@ -26,11 +24,10 @@ const AboutAuth = () => {
             virus. For additional information regarding the app's founders, you
             can reach them at the following: github.com/badeshiyan,
             github.com/Dempsey496 and https://github.com/smith-carlicia.
-          </div>
         </Paper>
       </Container>
       <AuthFooter />
-    </div>
+      </div>
   );
 };
 

@@ -2,16 +2,23 @@ footer {
   background-color: rgb(189, 122, 122);
   bottom: 0;
   display: flex;
+  justify-content: center;
   max-height: 20px;
   padding-bottom: 30px;
   padding-top: 10px;
   position: fixed;
   width: 100%;
 }
-
+footer .row * {
+  display: inline;
+  margin: 5px;
+}
+footer .row {
+  width: fit-content;
+  text-align: center;
+}
 #footerItems {
   color: rgb(248, 242, 242);
   font: serif;
   font-size: 15px;
-  justify-content: center;
 }

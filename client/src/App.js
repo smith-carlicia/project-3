@@ -10,25 +10,28 @@ import UserHome from "./containers/UserHome/UserHome";
 import UserShoppingCart from "./containers/UserShoppingCart/UserShoppingCart";
 import Checkout from "./containers/Checkout/Checkout";
 import Review from "./containers/Review/Review";
+import "./App.css";
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/addnewitem" component={AdminAddNew} />
-        <Route exact path="/adminedit" component={AdminEdit} />
-        <Route exact path="/admin" component={AdminHome} />
-        <Route exact path="/" component={HomeLogin} />
-        <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/about" component={UserAbout} />
-        <Route exact path="/userhome" component={UserHome} />
-        <Route exact path="/usershoppingcart" component={UserShoppingCart} />
-        <Route exact path="/checkout" component={Checkout} />
-        <Route exact path="/review" component={Review} />
-        <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/aboutauth" component={AboutAuth} />
-      </Switch>
-    </Router>
+    <div className="background">
+      <Router>
+        <Switch>
+          <Route exact path="/addnewitem" component={AdminAddNew} />
+          <Route exact path="/adminedit" component={AdminEdit} />
+          <Route exact path="/admin" component={AdminHome} />
+          <Route exact path="/" component={HomeLogin} />
+          <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/about" component={UserAbout} />
+          <Route exact path="/userhome" component={UserHome} />
+          <Route exact path="/usershoppingcart" component={UserShoppingCart} />
+          <Route exact path="/checkout" component={Checkout} />
+          <Route exact path="/review" component={Review} />
+          <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/aboutauth" component={AboutAuth} />
+        </Switch>
+      </Router>
+    </div>
   );
 }
 

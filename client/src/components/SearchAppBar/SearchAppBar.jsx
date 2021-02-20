@@ -1,56 +1,24 @@
 import "./SearchAppBar.css";
 import React from "react";
-import {
-  AppBar,
-  fade,
-  makeStyles,
-  Toolbar,
-  Typography,
-} from "@material-ui/core";
+import { Box, Grid } from '@material-ui/core';
 import HomeTwoToneIcon from "@material-ui/icons/HomeTwoTone";
 import MeetingRoomTwoToneIcon from "@material-ui/icons/MeetingRoomTwoTone";
-import { Link, NavLink } from "react-router-dom";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    borderBottom: "solid",
-    flexGrow: 1,
-  },
-  title: {
-    display: "none",
-    flexGrow: 1,
-    [theme.breakpoints.up("sm")]: {
-      display: "block",
-    },
-  },
-}));
+import { Link } from "react-router-dom";
 
 export default function SearchAppBar() {
-  const classes = useStyles();
-
   return (
-    <div className={classes.root}>
-      <AppBar position="fixed">
-        <Toolbar className="nav-style">
-          <Typography className={classes.title} variant="h6" noWrap>
-            <Link to="/about" className="nav-style">
-              Baby Driver
-            </Link>
-          </Typography>
-          <div
-            id="nav-mobile"
-            className="right"
-            style={{ direction: "inherit" }}
-          >
-            <NavLink to="/" className="nav-style">
-              <MeetingRoomTwoToneIcon />
-            </NavLink>
-            <NavLink to="/userhome" className="nav-style">
-              <HomeTwoToneIcon />
-            </NavLink>
-          </div>
-        </Toolbar>
-      </AppBar>
-    </div>
+    <Grid container>
+      <Box component="header" className="nav-style">
+        Baby Driver
+        <Link to="/aboutauth">
+        </Link>
+        <Link to="/userhome" className="home-link">
+          <HomeTwoToneIcon />
+        </Link>
+        <Link to="/" className="home-link">
+          <MeetingRoomTwoToneIcon />
+        </Link>
+      </Box>
+    </Grid>
   );
-}
+} 
