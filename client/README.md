@@ -1,61 +1,76 @@
-# Final Project
+# Baby Driver
 
-## Application Requirements
+* Deployed Site: https://babydriver66.herokuapp.com/ 
 
-* Must use ReactJS in some way
+## Description :
 
-* Must use a Node and Express Web Server
+Baby Driver is an application built for parents to order baby supplies and having it delivered to their door without having to leave the safety of their home amid the current COVID climate.
 
-* Must be backed by a MySQL or MongoDB database with a Sequelize or Mongoose ORM
+***
 
-* Must have CRUD routes for at least one model.
+## Table of Contents :
+1. [Technologies](#tech)
+2. [Screenshots](#shots)
+3. [Github Repo](#repo)
+4. [Credits](#creds)
+5. [Contributors](#help)
+6. [License](#lice)
 
-* Must deploy this application using Heroku with data. Follow our guide on [deploying MERN applications to Heroku](../04-Important/MERNHerokuDeploy.md) to do so.
+***
+<a name="tech"></a>
 
-* Must utilize at least 2 libraries, packages, or technologies that we haven't discussed
+## Technologies:
+* MongoDB/ Atlas
+* Mongoose
+* Express
+* React.js
+* Node.js
+* Material-UI
+* Heroku
 
-* Must allow for or involve the authentication of users in some way
+***
+<a name="shots"></a>
 
-* Must have a polished front end/UI, not Bootstrap.
+## Screenshots
+![Admin Home Screenshot](client\assets\images\bbAdminHome.png)
+![User Home Screenshot](./client\assets\images\bbUserHome.png)
 
-* Must have a folder structure that meets the MVC paradigm
+***
+<a name="repo"></a>
 
-* Must meet good quality coding standards (indentation, scoping, naming)
+## Github Repo:
+[Repo](https://github.com/Dempsey496/project-3)
 
-* Must protect API keys in Node with environment variables
+***
+<a name="creds"></a>
 
-## Presentation Requirements
+## Contributors :
 
-Use this [project presentation template](https://docs.google.com/presentation/d/1_u8TKy5zW5UlrVQVnyDEZ0unGI2tjQPDEpA0FNuBKAw/edit?usp=sharing) to address the following: 
+* Dempsey: MVC, Models, Database, Routes, Header, Footer, UserHome, all Admin pages,ShoppingCart page, and code debugger
+* Bambo: Started React Router, About page, and set background image
+* Carlicia: Checkout, PaymentForm, and Review pages
 
-* Elevator pitch: a one minute description of your application
+***
+<a name="lice"></a>
 
-* Concept: What is your user story? What was your motivation for development?
+## MIT License
 
-* Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
+Copyright (c) 2020 Dempsey496
 
-* Demo: Show your stuff!
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-* Directions for Future Development
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-* Links to to the deployed application and the GitHub repository
-
-
-## Grading Metrics 
-
-| Metric        | Weight | 
-| ---           | ---    |
-| Concept       | 10%    |
-| Design        | 20%    |
-| Functionality | 30%    |
-| Collaboration | 30%    |
-| Presentation  | 10%    |
-
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
