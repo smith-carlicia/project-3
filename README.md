@@ -35,8 +35,23 @@ Baby Driver is an application built for parents to order baby supplies and havin
 ![Admin Home Screenshot](client\assets\images\bbAdminHome.png)
 ![User Home Screenshot](./client\assets\images\bbUserHome.png)
 
-***
-<a name="repo"></a>
+### Login
+![login](./assets/bd-1.png)
+
+### Home
+![home](./assets/bd-2.png)
+
+### Shopping Cart
+![cart](./assets/bd-3.png)
+
+### Checkout
+![checkout](./assets/bd-4.png)
+
+
+## Deployment:
+
+[Deployed Link](https://babydriver66.herokuapp.com/)
+
 
 ## Github Repo:
 [Repo](https://github.com/Dempsey496/project-3)
