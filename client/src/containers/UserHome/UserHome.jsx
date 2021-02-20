@@ -12,14 +12,6 @@ const useStyles = makeStyles((theme) => ({
     primary: "#3f50b5",
     secondary: "#e53935",
   },
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
-    },
-    table: {
-      minWidth: 400,
-    },
-  },
   title: {
     margin: theme.spacing(4, 0, 2),
   },
@@ -50,7 +42,6 @@ export default function UserHome() {
     <>
       <SearchAppBar />
       <TableContainer component={Paper} fluid="true" style={{ marginTop: "100px", width: "100%" }}>
-        <div className={classes.root}>
           <Link to={{
             pathname: "/usershoppingcart",
             state: shoppingCart
@@ -90,7 +81,6 @@ export default function UserHome() {
               ))}
             </TableBody>
           </Table>
-        </div>
       </TableContainer>
       <AuthFooter />
     </>
