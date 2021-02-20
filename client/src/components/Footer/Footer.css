@@ -1,6 +1,7 @@
 footer {
   background-color: rgb(189, 122, 122);
   bottom: 0;
+  display: flex;
   max-height: 20px;
   padding-bottom: 30px;
   padding-top: 10px;
@@ -8,8 +9,9 @@ footer {
   width: 100%;
 }
 
-.footerItems {
-  color: rgb(7, 6, 6);
+#footerItems {
+  color: rgb(248, 242, 242);
   font: serif;
-  font-size: 12px;
+  font-size: 15px;
+  justify-content: center;
 }

@@ -29,19 +29,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 const Footer = () => {
   const classes = useStyles();
   return (
-    <footer >
+    <footer>
       <Grid container spacing={8} className={classes.root}>
         <Grid item spacing={4}>
           <NavLink className="footerItems" to="/about">
-            <Paper className={classes.paper}>About & Contact</Paper>
+            <Paper className={classes.paper}>About</Paper>
           </NavLink>
         </Grid>
         <Grid item spacing={4}><Paper className={classes.paper}><Copyright /></Paper>
-          {/* <Copyright className="footerItems"/> */}
         </Grid>
         <Grid item spacing={4}>
           <NavLink className="footerItems" to="/admin">

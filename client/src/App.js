@@ -13,8 +13,6 @@ import Review from "./containers/Review/Review";
 
 function App() {
   return (
-
-    <div id="user-about">
     <Router>
       <Switch>
         <Route exact path="/addnewitem" component={AdminAddNew} />
@@ -31,7 +29,6 @@ function App() {
         <Route exact path="/aboutauth" component={AboutAuth} />
       </Switch>
     </Router>
-    </div>
   );
 }
 
