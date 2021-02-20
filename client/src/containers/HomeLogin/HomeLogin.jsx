@@ -5,6 +5,7 @@ import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
 import { Link as Follow } from "react-router-dom";
 import Paper from "@material-ui/core/Paper";
 
+
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: "25ch",
