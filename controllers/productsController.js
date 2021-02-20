@@ -33,11 +33,10 @@ module.exports = {
   },
   deleteProduct: async (req, res) => {
     try {
-      await Product.findByIdAndDelete(req.params.id)
-      const result = await Product.find()
-      res.json(result)
-    }
-    catch (error) {
+      await Product.findByIdAndDelete(req.params.id);
+      const result = await Product.find();
+      res.json(result);
+    } catch (error) {
       res.status(500).send(error);
     }
   },

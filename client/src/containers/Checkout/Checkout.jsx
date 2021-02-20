@@ -1,4 +1,4 @@
-import React, { useState, useEffect }  from 'react';
+import React, { useState, useEffect } from 'react';
 // import {  StepLabel, Stepper  } from '@material-ui/core/styles';
 import { Button, Paper, Step, Stepper, StepLabel } from '@material-ui/core';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -10,70 +10,61 @@ import Review from '../Review/Review';
 
 const steps = ['Shipping address', 'Payment details', 'Review your order'];
 
-
-
-
 export default function Checkout() {
-    const [activeStep, setActiveStep] = useState(0);
+  const [activeStep, setActiveStep] = useState(0);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [zipcode, setZipcode] = useState("");
+  const [nameOnCard, setNameOnCard] = useState("");
+  const [cardno, setCardNo] = useState("");
+  const [expirationDate, setExpirationDate] = useState("");
+  const [cvv, setCvv] = useState("");
+  const [addy, setAddy] = useState("");
+  const [cty, setCty] = useState("");
+  const [st, setSt] = useState("");
+  const [zip, setZip] = useState("");
 
-
-
-    const[firstName, setFirstName] = useState("");
-    const[lastName, setLastName] = useState("");
-    const[address, setAddress] = useState("");
-    const[city, setCity] = useState("");
-    const[state, setState] = useState("");
-    const[zipcode, setZipcode] = useState("");
-
-
-    const[nameOnCard, setNameOnCard] = useState("");
-    const[cardno, setCardNo] = useState("");
-    const[expirationDate, setExpirationDate] = useState("");
-    const[cvv, setCvv] = useState("");
-    const[addy, setAddy] = useState("");
-    const[cty, setCty] = useState("");
-    const[st, setSt] = useState("");
-    const[zip, setZip] = useState("");
-
-
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return <AddressForm 
-                firstName={firstName} setFirstName={setFirstName}  
-                lastName={lastName} setLastName={setLastName}
-                address={address} setAddress={setAddress}
-                city={city} setCity={setCity}
-                state={state} setState={setState}
-                zipcode={zipcode} setZipcode={setZipcode}
-                 />;
-    case 1:
-      return <PaymentForm 
-                nameOnCard={nameOnCard} setNameOnCard={setNameOnCard}  
-                cardno={cardno} setCardNo={setCardNo}
-                expirationDate={expirationDate} setExpirationDate={setExpirationDate}
-                cvv={cvv} setCvv={setCvv}
-                addy={addy} setAddy={setAddy}
-                cty={cty} setCty={setCty}
-                st={st} setSt={setSt}
-                zip={zip} setZip={setZip}
-                />;
-    case 2:
-      return <Review 
-                firstName={firstName} lastName={lastName} 
-                address={address} city={city} 
-                state={state} zipcode={zipcode}
-                nameOnCard={nameOnCard} cardno={cardno} 
-                expirationDate={expirationDate}  cvv={cvv} 
-                addy={addy} cty={cty} 
-                st={st} zip={zip}
-                />;
-    default:
-      throw new Error('Unknown step');
+  function getStepContent(step) {
+    switch (step) {
+      case 0:
+        return <AddressForm
+          firstName={firstName} setFirstName={setFirstName}
+          lastName={lastName} setLastName={setLastName}
+          address={address} setAddress={setAddress}
+          city={city} setCity={setCity}
+          state={state} setState={setState}
+          zipcode={zipcode} setZipcode={setZipcode}
+        />;
+      case 1:
+        return <PaymentForm
+          nameOnCard={nameOnCard} setNameOnCard={setNameOnCard}
+          cardno={cardno} setCardNo={setCardNo}
+          expirationDate={expirationDate} setExpirationDate={setExpirationDate}
+          cvv={cvv} setCvv={setCvv}
+          addy={addy} setAddy={setAddy}
+          cty={cty} setCty={setCty}
+          st={st} setSt={setSt}
+          zip={zip} setZip={setZip}
+        />;
+      case 2:
+        return <Review
+          firstName={firstName} lastName={lastName}
+          address={address} city={city}
+          state={state} zipcode={zipcode}
+          nameOnCard={nameOnCard} cardno={cardno}
+          expirationDate={expirationDate} cvv={cvv}
+          addy={addy} cty={cty}
+          st={st} zip={zip}
+        />;
+      default:
+        throw new Error('Unknown step');
+    }
   }
-}
 
-  // useEffect(()=> {
+    // useEffect(()=> {
   //       console.log( `First Name Changed ${firstName}`);
   //       console.log( `Last Name Changed ${lastName}`);
   //       console.log( `Street Address Changed ${address}`);
@@ -125,24 +116,24 @@ function getStepContent(step) {
                 </Typography>
               </React.Fragment>
             ) : (
-              <React.Fragment>
-                {getStepContent(activeStep)}
-                <div>
-                  {activeStep !== 0 && (
-                    <Button onClick={handleBack}>
-                      Back
+                <React.Fragment>
+                  {getStepContent(activeStep)}
+                  <div>
+                    {activeStep !== 0 && (
+                      <Button onClick={handleBack}>
+                        Back
+                      </Button>
+                    )}
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      onClick={handleNext}
+                    >
+                      {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
                     </Button>
-                  )}
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={handleNext}
-                  >
-                    {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
-                  </Button>
-                </div>
-              </React.Fragment>
-            )}
+                  </div>
+                </React.Fragment>
+              )}
           </React.Fragment>
         </Paper>
       </main>

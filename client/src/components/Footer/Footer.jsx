@@ -1,7 +1,7 @@
 import './Footer.css';
 import React from "react";
 import Typography from '@material-ui/core/Typography';
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Copyright() {
   return (
