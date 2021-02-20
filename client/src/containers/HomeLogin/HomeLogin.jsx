@@ -34,11 +34,23 @@ export default function HomeLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault()
+  // const handleSubmit = (evt) => {
+  //   evt.preventDefault()
 
+  //   setEmail(evt.target.value)
+  //   setPassword(evt.target.value)
+  // }
+
+  const handleEmail = (evt) => {
+    evt.preventDefault()
     setEmail(evt.target.value)
+
+  }
+
+  const handlePassword = (evt) => {
+    evt.preventDefault()
     setPassword(evt.target.value)
+
   }
   return (
     <>
@@ -66,7 +78,7 @@ export default function HomeLogin() {
                 autoFocus
                 name='email'
                 value={email}
-                onChange={handleSubmit}
+                onChange={handleEmail}
               />
               <TextField
                 variant="outlined"
@@ -80,7 +92,7 @@ export default function HomeLogin() {
                 autoComplete="current-password"
                 name='password'
                 value={password}
-                onChange={handleSubmit}
+                onChange={handlePassword}
               />
               <Follow to='/userhome'><Button
                 type="submit"
