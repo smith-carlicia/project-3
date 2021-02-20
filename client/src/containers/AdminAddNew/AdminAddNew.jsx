@@ -8,8 +8,6 @@ import LoginAppBar from "../../components/LoginAppBar/LoginAppBar";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    // backgroundImage: 'url(https://images.unsplash.com/photo-1561168112-e9bc0506c563?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjN8fGJhYnklMjBzdHJvbGxlcnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60)',
-    // backgroundRepeat: 'no-repeat',
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
     backgroundSize: 'cover',
@@ -18,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    padding: '15px',
   },
   avatar: {
     margin: theme.spacing(1),
@@ -46,7 +45,6 @@ function AdminAddNew() {
   })
   const handleChange = e => {
     const { name, type, value } = e.target;
-    console.log(type);
     const val = type === 'number' ? parseFloat(value) : value
     setProduct({ ...product, [name]: val })
   }
@@ -66,7 +64,6 @@ function AdminAddNew() {
             e.preventDefault()
             setLoading(true);
             productAPI.createProduct(product).then((response) => {
-              console.log(response.data);
               history.push("/admin");
             })
               .catch((err) => {
