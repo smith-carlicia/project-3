@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/project-3", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/baby-driver", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
